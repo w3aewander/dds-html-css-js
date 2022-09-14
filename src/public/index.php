@@ -10,6 +10,7 @@
     <nav>
         <a href=""   data-target="inicio.html" > Inicio </a> |
         <a href="" data-target="conteudo.html"> Conteúdo</a> |
+        <a href="" data-target="contato.html">Contato</a> |
         <a href=""  data-target="sobre.html"> Sobre </a> 
     </nav>
 
