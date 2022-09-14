@@ -1,0 +1,20 @@
+{
+    "name": "wanderlei/dds-html-js-css",
+    "autoload": {
+        "psr-4": {
+            "Wanderlei\\DdsHtmlJsCss\\": "src/"
+        }
+    },
+
+    "scripts" : {
+         "start": "php -S 0.0.0.0:9000 -t src/public"
+    },
+
+    "authors": [
+        {
+            "name": "Wanderlei Silva",
+            "email": "wander.silva@gmail.com"
+        }
+    ],
+    "require": {}
+}
