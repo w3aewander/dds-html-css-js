@@ -10,3 +10,14 @@
 5. Apresentação de dados via requisição http assíncrona.
 6. Consumo de API - Application Programming Interface.
 7. Estilizar página utilizado CSS - Cascade Style Sheet - Folha de Estilo em Cascata
+
+## Quais os passos necessários para criar a atividade?
+1. Garantir que os binários do PHP estão baixados para a versão estável mais recente;
+2. Configurar a variável de ambiente "path" esteja devidamente configurada para o seu usuário (WINDOWS). Para usuários Linux, apenas instale o pactote PHP de acordo com os procedimentos descritos para a distribuição;
+3. Criar uma pasta para o novo projeto;
+4. Configurar o composer: baixar o composer.phar ou utilizar o link oferido no site oficial para o download correto da aplicação de acordo com a versão do PHP instalado;
+5. Dentro da pasta do projeto e na linha de comando do sistema operacional inicializar o projeto com o composer (php composer.phar init); 
+6. Adicionar a referência externa para o CDN do Bootstrap, FontAwesome;
+7. Instalar extensões no Visual Studio Code (vscode) para php, js, css, sass, etc.
+
+
