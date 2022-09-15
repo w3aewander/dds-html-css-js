@@ -1,6 +1,10 @@
 # Desenvolvimento PHP + HTML + CSS + JS
 ## Atividade Prática
 
+> Por Wanderlei Silva do Carmo <wander.silva@gmail.com>
+> Engenheiro Arquiteto de Software
+> Instrutor de Educação Profissional Técnica
+
 ![PHP+HTML5+MYSQL](https://www.yoan-jouve.com/wp-content/uploads/2020/12/520-5206022_php-mysql-logo-png-transparent-png-768x589.png "Logo PHP")
 ### Objetivos
 1. Praticar a criação de site utilizando PHP com HTML5;
