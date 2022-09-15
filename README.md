@@ -3,13 +3,13 @@
 
 ![PHP+HTML5+MYSQL](https://www.yoan-jouve.com/wp-content/uploads/2020/12/520-5206022_php-mysql-logo-png-transparent-png-768x589.png "Logo PHP")
 ### Objetivos
-1. Praticar a criação de site utilizando PHP com HTML5.
-2. Criar aplicação SPA - Simple Page Application (SPA)
-3. Aprender a realizar carregamento dinâmico de conteúdo.
-4. Aquisição de dados.
-5. Apresentação de dados via requisição http assíncrona.
-6. Consumo de API - Application Programming Interface.
-7. Estilizar página utilizado CSS - Cascade Style Sheet - Folha de Estilo em Cascata
+1. Praticar a criação de site utilizando PHP com HTML5;
+2. Criar aplicação SPA - Simple Page Application (SPA);
+3. Aprender a realizar carregamento dinâmico de conteúdo;
+4. Aquisição de dados;
+5. Apresentação de dados via requisição http assíncrona;
+6. Consumo de API - Application Programming Interface;
+7. Estilizar página utilizado CSS - Cascade Style Sheet - Folha de Estilo em Cascata;
 
 ## Quais os passos necessários para criar a atividade?
 1. Garantir que os binários do PHP estão baixados para a versão estável mais recente;
@@ -20,4 +20,8 @@
 6. Adicionar a referência externa para o CDN do Bootstrap, FontAwesome;
 7. Instalar extensões no Visual Studio Code (vscode) para php, js, css, sass, etc.
 
-
+### O que deve ser realizado na atividade prática?
+1. Uma aplicação SPA contendo links para conteúdo, contato e sobre - criando links que carregarão as páginas dinâmicamente;
+2. Executar a aplicação em um browser;
+3. Depurar a aplicação;
+4. Publicar a aplicação em um servidor de hospedagem gratuito com suporte para a linguagem PHP;
