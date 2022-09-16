@@ -24,7 +24,7 @@
 3. Criar uma pasta para o novo projeto;
 4. Configurar o composer: baixar o **composer.phar** ou utilizar o link oferido no site oficial para o download correto da aplicação de acordo com a versão do PHP instalado;
 5. Dentro da pasta do projeto e na linha de comando do sistema operacional inicializar o projeto com o composer (**php composer.phar init**); 
-6. Adicionar a referência externa para o CDN do _Bootstrap_, FontAwesome, etc.;
+6. Adicionar a referência externa para o ["CDN"](https://www.bootstrapcdn.com/ "Link para CDN bootstrap e font-awesome) CDN do _Bootstrap_, FontAwesome, etc.;
 7. Instalar extensões no Visual Studio Code (vscode) para php, js, css, sass, etc.
 
 ### O que deve ser realizado na atividade prática?
