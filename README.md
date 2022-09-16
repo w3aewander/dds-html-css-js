@@ -20,15 +20,16 @@
 
 ## Quais os passos necessários para criar a atividade?
 1. Garantir que os binários do PHP estão baixados para a versão estável mais recente;
-2. Configurar a variável de ambiente "path" esteja devidamente configurada para o seu usuário (WINDOWS). Para usuários Linux, apenas instale o pactote PHP de acordo com os procedimentos descritos para a distribuição;
+2. Configurar a variável de ambiente "path" devidamente  o seu usuário (WINDOWS). Para usuários Linux, apenas instale o pactote PHP de acordo com os procedimentos descritos para a distribuição;
 3. Criar uma pasta para o novo projeto;
-4. Configurar o composer: baixar o composer.phar ou utilizar o link oferido no site oficial para o download correto da aplicação de acordo com a versão do PHP instalado;
-5. Dentro da pasta do projeto e na linha de comando do sistema operacional inicializar o projeto com o composer (php composer.phar init); 
-6. Adicionar a referência externa para o CDN do Bootstrap, FontAwesome;
+4. Configurar o composer: baixar o **composer.phar** ou utilizar o link oferido no site oficial para o download correto da aplicação de acordo com a versão do PHP instalado;
+5. Dentro da pasta do projeto e na linha de comando do sistema operacional inicializar o projeto com o composer (**php composer.phar init**); 
+6. Adicionar a referência externa para o CDN do _Bootstrap_, FontAwesome, etc.;
 7. Instalar extensões no Visual Studio Code (vscode) para php, js, css, sass, etc.
 
 ### O que deve ser realizado na atividade prática?
-1. Uma aplicação SPA contendo links para conteúdo, contato e sobre - criando links que carregarão as páginas dinâmicamente;
+1. Uma aplicação **SPA** contendo links para conteúdo, contato e sobre - criando links que carregarão as páginas dinâmicamente;
 2. Executar a aplicação em um browser;
 3. Depurar a aplicação;
-4. Publicar a aplicação em um servidor de hospedagem gratuito com suporte para a linguagem PHP;
+4. Criar uma conta no provedor de hospedagem gratuita - ["Umbler"](https://www.umbler.com/br "Umbler")
+5. Publicar a aplicação em um servidor de hospedagem gratuito com suporte para a linguagem PHP;
