@@ -5,7 +5,7 @@ ancora.forEach( a => {
     a.addEventListener('click', (evt) =>{
          evt.preventDefault()
        
-         const  pagina = evt.target.getAttribute('data-target')
+         const  pagina = evt.target.getAttribute('data-target') + ".html"
 
          console.log(pagina)
 
