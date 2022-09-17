@@ -58,6 +58,7 @@
         <!-- o conteudo será injetado dinâmicamente pelo JavaScript -->
     </div>
 
+    <div id="faixa-deslizante"></div>
 </main>
 
 <footer class="d-flex justify-content-between jumbroton bg-dark text-light mt-2 pt-1 px-2 px-2 pb-1 fixed-bottom ">

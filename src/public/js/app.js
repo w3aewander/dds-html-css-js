@@ -1,6 +1,17 @@
 const app = document.getElementById('app')
 const ancora = document.querySelectorAll('a')
 const relogio = document.getElementsByClassName('relogio-rodape')[0]
+const faixa  = document.getElementById('faixa-deslizante')
+
+
+const animaFaixa = () => {
+    let width = 90
+
+    setInterval( () => {
+          faixa.style.width  =  `${Math.random() * width}%`     
+    }, 150)
+}
+
 
 ancora.forEach( a => {
     a.addEventListener('click', (evt) =>{
@@ -33,4 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     app.innerHTML = "Página dinamicamente carregada..."
 
+    animaFaixa();
 })
+
+
