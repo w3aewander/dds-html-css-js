@@ -4,7 +4,7 @@ body{
     background: linear-gradient(to bottom,rgb(80, 76, 76), #959191, #f3f3f3);
 }
 main {
-    height: 100vh;
+    /* height: 100vh; */
     min-height: 100vh;
     background-color: #fafafa;
 }
