@@ -1,0 +1,19 @@
+body{
+    padding-top: 120px;
+    font-size: .78rem;
+    background: linear-gradient(to bottom,rgb(80, 76, 76), #959191, #f3f3f3);
+}
+main {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(239, 190, 139);
+    text-decoration-style: double;
+}
+.relogio-rodape{
+    border: 1px inset darkgray;
+}
