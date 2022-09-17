@@ -18,7 +18,7 @@
 
 <header class="fixed-top mb-4">
     <div class="jumbotron p-2 bg-primary text-white">
-        <h1>GiGi Control</h1>
+        <strong>App em PHP + HTML</strong><small> Prof. Wanderlei Silva do Carmo</small> 
     </div>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
@@ -64,7 +64,7 @@
 <footer class="d-flex justify-content-between jumbroton bg-dark text-light mt-2 pt-1 px-2 px-2 pb-1 fixed-bottom ">
 
     <div class="self-start">
-        Usuário: <span id="">Visitante</span>
+        Usuário: <span id="">Visitante|<small>wander.silva@gmail.com</small></span>
     </div>
     <div> Mensagens do sistema...</div>
     <div class="self-end"><span class="relogio-rodape px-1 my-1"> 00:00:00 </span></div>
