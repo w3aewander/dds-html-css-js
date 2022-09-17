@@ -53,7 +53,7 @@
 
 </header>
 
-<main class="container py-4 px-2 border">
+<main class="container py-1 border">
     <div id="app">
         <!-- o conteudo será injetado dinâmicamente pelo JavaScript -->
     </div>
