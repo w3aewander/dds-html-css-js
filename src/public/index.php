@@ -30,16 +30,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="inicio">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="" data-target="inicio" onclick="carregarPagina('inicio');">Inicio</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="conteudo">Conteudo</a>
+                <a class="nav-link active" aria-current="page" href="" data-target="conteudo" onclick="carregarPagina('conteudo');" >Conteudo</a>
                 </li>
 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="contato">Contato</a>
+                <a class="nav-link active" aria-current="page" href="" data-target="contato" onclick="carregarPagina('contato','processarEnvio()');">Contato</a>
                 </li>
                 
 
@@ -56,7 +56,7 @@
 <main class="container py-1 border">
     <div id="app">
         <!-- o conteudo será injetado dinâmicamente pelo JavaScript -->
-        
+
     </div>
 
     <div id="faixa-deslizante"></div>

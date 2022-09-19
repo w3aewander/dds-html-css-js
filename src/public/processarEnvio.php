@@ -11,7 +11,9 @@
 
  //die( var_dump($dados) );
 
- printf("Nome: %s<br>", $dados['nome']);
- printf("Email: %s<br>", $dados['email']);
- printf("Assunto: %s<br>", $dados['assunto']);
- printf("Mensagem: %s<br>", $dados['mensagem']);
+ echo json_encode($dados);
+ 
+//printf("Nome: %s<br>", $dados['nome']);
+// printf("Email: %s<br>", $dados['email']);
+//  printf("Assunto: %s<br>", $dados['assunto']);
+//  printf("Mensagem: %s<br>", $dados['mensagem']);
