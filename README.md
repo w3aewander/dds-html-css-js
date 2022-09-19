@@ -18,6 +18,10 @@
 6. Consumo de API - Application Programming Interface;
 7. Estilizar página utilizado CSS - Cascade Style Sheet - Folha de Estilo em Cascata;
 
+## SPA - Single Page Application
+### Desenvolvimento de aplicação em página única
+Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas uma página principal que contenha referência para acessos aos demais recursos do sistema (páginas ou chamada a API/RPC) utilizando links para acesso através de âncoras HTML.
+
 ## Quais os passos necessários para criar a atividade?
 1. Garantir que os binários do PHP estão baixados para a versão estável mais recente;
 2. Configurar a variável de ambiente "path" devidamente  o seu usuário (WINDOWS). Para usuários Linux, apenas instale o pactote PHP de acordo com os procedimentos descritos para a distribuição;
