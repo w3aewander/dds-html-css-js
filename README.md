@@ -22,7 +22,7 @@
 1. Garantir que os binários do PHP estão baixados para a versão estável mais recente;
 2. Configurar a variável de ambiente "path" devidamente  o seu usuário (WINDOWS). Para usuários Linux, apenas instale o pactote PHP de acordo com os procedimentos descritos para a distribuição;
 3. Criar uma pasta para o novo projeto;
-4. Configurar o composer: baixar o **composer.phar** ou utilizar o [link do composer](https://getcomposer.org/download/ "composer") oferecido no site oficial para o download correto da aplicação de acordo com a versão do PHP instalado;
+4. Configurar o composer: baixar o **composer.phar** utilizando o  [link do composer](https://getcomposer.org/download/ "composer") oferecido no site oficial; copiar o script  para o download correto da aplicação de acordo com a versão do PHP instalado;
 5. Dentro da pasta do projeto e na linha de comando do sistema operacional inicializar o projeto com o composer (**php composer.phar init**); 
 6. Adicionar a referência externa para o [CDN](https://www.bootstrapcdn.com/ "Link para CDN bootstrap e font-awesome") do _Bootstrap_, FontAwesome, etc.;
 7. Instalar extensões no Visual Studio Code (vscode) para php, js, css, sass, etc.
