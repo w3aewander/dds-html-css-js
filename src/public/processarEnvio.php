@@ -3,17 +3,15 @@
  * Processar o envio da mensagem
  */
 
- echo "Mensagem recebida...";
- echo "Os dados recebidos foram:";
-
 
  $dados = $_REQUEST;
 
- //die( var_dump($dados) );
-
- echo json_encode($dados);
  
-//printf("Nome: %s<br>", $dados['nome']);
-// printf("Email: %s<br>", $dados['email']);
-//  printf("Assunto: %s<br>", $dados['assunto']);
-//  printf("Mensagem: %s<br>", $dados['mensagem']);
+ $retorno = [ 
+     'nome' => $dados['nome'], 
+     'email' => $dados['email'], 
+     'assunto' => $dados['assunto'],
+     'mensagem' => $dados['mensagem'] 
+    ];
+    
+echo json_encode($retorno, JSON_PRETTY_PRINT);

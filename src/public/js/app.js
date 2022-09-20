@@ -3,7 +3,15 @@ const ancora = document.querySelectorAll('a')
 const relogio = document.getElementsByClassName('relogio-rodape')[0]
 const faixa = document.getElementById('faixa-deslizante')
 
+ancora.forEach(a => {
+    a.addEventListener('click', (evt) => {
+        evt.preventDefault()
 
+        carregarPagina(`${evt.target.getAttribute('data-target')}.html`)       
+  
+        scrollTo(0, 0)
+    })
+})
 
 const animaFaixa = () => {
     let width = 70
@@ -14,27 +22,16 @@ const animaFaixa = () => {
 }
 
 //chamada de página com callback opcional...
-const carregarPagina = ((pagina, callback) => {
+const carregarPagina = ( (pagina) => {
 
     fetch(pagina)
         .then(resp => resp.text())
         .then(resp => {
             app.innerHTML = resp
-
-            if (callback) {
-                callback()
-            }
-
         })
 
-    scrollTo(0, 0)
-})
 
-ancora.forEach(a => {
-    a.addEventListener('click', (evt) => {
-        evt.preventDefault()
-        scrollTo(0, 0)
-    })
+    scrollTo(0, 0)
 })
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let minuto = t.getMinutes().toString().padStart(2, '0')
         let segundos = t.getSeconds().toString().padStart(2, '0')
 
-        relogio.innerHTML = `
-                        $ { hora }: $ { minuto }: $ { segundos }
-                        `
+        relogio.innerHTML = `${hora}:${minuto}:${segundos}`
 
     }, 1000)
 
@@ -58,8 +53,40 @@ document.addEventListener("DOMContentLoaded", () => {
     animaFaixa()
 })
 
-const processarEnvio = (e) => {
-    alert('dados do formulário capturado.')
-    return
+const processarEnvio = () => {
 
+    setTimeout(() => {
+        document.getElementById('form-contato').addEventListener('submit', (e) => {
+            e.preventDefault()
+            alert('dados do formulário capturado.')
+
+            
+             let constObjForm = new FormData()
+             constObjForm.append("nome",e.target.nome.value)
+             constObjForm.append("email",e.target.email.value)
+             constObjForm.append("assunto",e.target.assunto.value)
+             constObjForm.append("mensagem",e.target.mensagem.value)
+             
+             fetch('processarEnvio.php', {method:'POST', body:constObjForm})
+             .then( resp => resp.json() )
+             .then( resp => { 
+                console.log(resp)
+
+                document.getElementById('retorno').innerHTML = `
+                   <h2>Dados Recebidos do Servidor</h2>
+                   <strong>Nome:</strong>${resp.nome}<br>
+                   <strong>E-mail:</strong>${resp.email}<br>
+                   <strong>Assunto:</strong>${resp.assunto}<br>
+                   <strong>Mensagem:</strong>${resp.mensagem}<br>
+
+                `
+
+             })
+
+
+
+             return false;
+        })
+    }, 1000)
+    
 }

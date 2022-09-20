@@ -30,21 +30,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="inicio" onclick="carregarPagina('inicio');">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="inicio">Inicio</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="conteudo" onclick="carregarPagina('conteudo');" >Conteudo</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="conteudo">Conteudo</a>
                 </li>
 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="contato" onclick="carregarPagina('contato','processarEnvio()');">Contato</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="contato" onclick="processarEnvio();">Contato</a>
                 </li>
                 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="" data-target="sobre">Sobre</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="sobre">Sobre</a>
                 </li>
             </ul>
             </div>
