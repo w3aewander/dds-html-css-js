@@ -62,6 +62,7 @@ const processarEnvio = () => {
 
             
              let constObjForm = new FormData()
+
              constObjForm.append("nome",e.target.nome.value)
              constObjForm.append("email",e.target.email.value)
              constObjForm.append("assunto",e.target.assunto.value)
@@ -81,6 +82,10 @@ const processarEnvio = () => {
 
                 `
 
+                e.target.nome.value = ""
+                e.target.email.value = ""
+                e.target.assunto.value = ""
+                e.target.mensagem.value = ""
              })
 
 
