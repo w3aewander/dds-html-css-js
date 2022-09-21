@@ -35,7 +35,7 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 1. Uma aplicação **SPA** contendo links para conteúdo, contato e sobre - criando links que carregarão as páginas dinâmicamente;
 2. Executar a aplicação em um browser;
 3. Depurar a aplicação;
-4. Criar uma conta no provedor de hospedagem gratuita - ["Umbler"](https://www.umbler.com/br "Umbler")
+4. Criar uma conta no provedor de hospedagem gratuita - [Grátis PHP Host](http://www.gratisphphost.info/?i=1 "Grátis PHP Host")
 5. Publicar a aplicação em um servidor de hospedagem gratuito com suporte para a linguagem PHP;
 
 ## License
