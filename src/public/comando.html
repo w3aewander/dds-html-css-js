@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executar comando remoto</title>
+
+
+    <style>
+
+        .box-circles{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .circle{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: black;
+            border-color: blue;
+            color: dark;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-circles">
+
+        <div class="circle" data-cor="black">
+            
+        </div>
+        <div class="" id="retorno"></div>
+        
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () =>{
+
+            setInterval(() => {
+                 fetch('obterDados.php')
+                 .then ( resp => resp.json())
+                 .then ( resp => { 
+                    console.log(resp)
+                })
+                 
+            }, 1000)
+                document.getElementById('retorno').innerHTML = `Cor recebida: ${color}`
+            
+
+        })
+    </script>
+</body>
+</html>

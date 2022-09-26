@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo a criar WEB Pages dinâmicas</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="css/app.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    
 
 </head>
 <body>
 
 <header class="fixed-top mb-4">
-    <div class="jumbotron p-2 bg-primary text-white">
-        <strong>App em PHP + HTML</strong><small> Prof. Wanderlei Silva do Carmo</small> 
+    <div class="jumbotron p-4 bg-primary text-white">
+        <strong>App em PHP + HTML</strong><small>Wanderlei Silva do Carmo</small> 
     </div>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
@@ -32,12 +31,14 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                   <a class="nav-link active" aria-current="page" href="#" data-target="login"><i class="fa fa-home fa-fw"></i> Entrar</a>
+                   <a class="nav-link active" aria-current="page" href="#" data-target="inicio">  <i class="fas fa-home"></i> Inicio</a>
                 </li>
 
                 <li class="nav-item">
-                   <a class="nav-link active" aria-current="page" href="#" data-target="inicio">  <i class="fas fa-home"></i> Inicio</a>
+                   <a class="nav-link active" aria-current="page" href="#" data-target="login"  onclick="processarLogin();"><i class="fa fa-door-open fa-fw"></i> Entrar</a>
                 </li>
+
+
 
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#" data-target="conteudo">Conteudo</a>
@@ -50,7 +51,7 @@
                 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-target="sobre">Sobre</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="sobre"><i class="fa fa-ask fa-fw"></i> Sobre</a>
                 </li>
             </ul>
             </div>
@@ -73,11 +74,12 @@
     <div class="self-start">
         Usuário: <span id="">Visitante|<small>wander.silva@gmail.com</small></span>
     </div>
-    <div> Mensagens do sistema...</div>
+    <div id="msg"> Mensagens do sistema...</div>
     <div class="self-end"><span class="relogio-rodape px-1 my-1"> 00:00:00 </span></div>
 
 </footer>
-    
+
+
 <script src="js/app.js"></script>
     
 </body>

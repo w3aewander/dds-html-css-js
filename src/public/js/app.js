@@ -2,6 +2,7 @@ const app = document.getElementById('app')
 const ancora = document.querySelectorAll('a')
 const relogio = document.getElementsByClassName('relogio-rodape')[0]
 const faixa = document.getElementById('faixa-deslizante')
+let divMsg = document.getElementById("msg")
 
 ancora.forEach(a => {
     a.addEventListener('click', (evt) => {
@@ -29,7 +30,6 @@ const carregarPagina = ( (pagina) => {
         .then(resp => {
             app.innerHTML = resp
         })
-
 
     scrollTo(0, 0)
 })
@@ -94,4 +94,36 @@ const processarEnvio = () => {
         })
     }, 1000)
     
+}
+
+
+const processarLogin = () => {
+
+    setTimeout(() => {
+ 
+           document.getElementById('form-login').addEventListener('submit', (evt)=>{
+    
+            evt.preventDefault()
+
+            divMsg.innerHTML = 'carregando recursos..'
+            console.log(evt.target)
+
+            const options =  { 
+                 headers: {'Content-Type': 'application/x-www-form'}
+            }
+
+            const formData = new FormData()
+            formData.append('email', evt.target.email.value)
+            formData.append('senha', evt.target.senha.value)
+    
+            fetch('/login.php', { method: "POST", body: JSON.stringify(formData), options})
+            .then( resp => resp.json())
+            .then( resp => { divMsg.innerHTML = "recursos carregados..."; console.log(resp)})
+            .catch( err => document.getElementById('retorno').innerHTML = err.message)
+             
+        }, 1000)
+
+    } )
+
+    //return false;
 }
