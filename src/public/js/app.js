@@ -137,14 +137,18 @@ const processarLogin = () => {
  */
 const enviarComando = ( comando )  => {
 
-   fetch(urlEnvioComando, { method: "POST", body: comando })
+    let cmd = new FormData();
+    cmd.append("comando",comando)
+
+    fetch(urlEnvioComando, { method: "POST", body: cmd  })   
     .then( resp => resp.json())
     .then(resp => console.log(resp))
     .catch(err => console.log(err))
     .finally( (r) => { 
-         estadoComando()
+        setTimeout( () => {
+            estadoComando()
+        }, 1000)
      })
-
 
 }
 /**
@@ -153,8 +157,14 @@ const enviarComando = ( comando )  => {
  */
 const estadoComando = () => {
 
-    fetch(urlEstadoComando)
-        .then(resp => resp.json())
-        .then( resp => console.log(resp))
-        .catch( err => console.log(err))
+    for (var i=0; i <= 5; i++){
+    
+        setTimeout( () => {
+            fetch(urlEstadoComando)
+            .then(resp => resp.json())
+            .then( resp => console.log(resp))
+            .catch( err => console.log(err))        
+        }, 1000)
+
+    }
 }
