@@ -4,6 +4,9 @@ const relogio = document.getElementsByClassName('relogio-rodape')[0]
 const faixa = document.getElementById('faixa-deslizante')
 let divMsg = document.getElementById("msg")
 
+const urlEnvioComando  = 'https://loja.wmomodavix.site/api/comando'
+const urlEstadoComando = 'https://loja.wmomodavix.site/api/status'
+
 ancora.forEach(a => {
     a.addEventListener('click', (evt) => {
         evt.preventDefault()
@@ -126,4 +129,32 @@ const processarLogin = () => {
     } )
 
     //return false;
+}
+
+/**
+ * Enivar comando para a API
+ * @param {*} comando 
+ */
+const enviarComando = ( comando )  => {
+
+   fetch(urlEnvioComando, { method: "POST", body: comando })
+    .then( resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err))
+    .finally( (r) => { 
+         estadoComando()
+     })
+
+
+}
+/**
+ * Obter o último comando emitido
+ * @param void
+ */
+const estadoComando = () => {
+
+    fetch(urlEstadoComando)
+        .then(resp => resp.json())
+        .then( resp => console.log(resp))
+        .catch( err => console.log(err))
 }
