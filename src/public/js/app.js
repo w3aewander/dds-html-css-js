@@ -7,6 +7,8 @@ let divMsg = document.getElementById("msg")
 const urlEnvioComando  = 'https://loja.wmomodavix.site/api/comando'
 const urlEstadoComando = 'https://loja.wmomodavix.site/api/status'
 
+let contador = 0
+
 ancora.forEach(a => {
     a.addEventListener('click', (evt) => {
         evt.preventDefault()
@@ -135,12 +137,12 @@ const processarLogin = () => {
  * Enivar comando para a API
  * @param {*} comando 
  */
-const enviarComando = ( comando )  => {
+const  enviarComando = async ( comando )  =>  {
 
     let cmd = new FormData();
     cmd.append("comando",comando)
 
-    fetch(urlEnvioComando, { method: "POST", body: cmd  })   
+    await fetch(urlEnvioComando, { method: "POST", body: cmd  })   
     .then( resp => resp.json())
     .then(resp => console.log(resp))
     .catch(err => console.log(err))
@@ -155,16 +157,49 @@ const enviarComando = ( comando )  => {
  * Obter o último comando emitido
  * @param void
  */
-const estadoComando = () => {
+const estadoComando = async() => {
 
-    for (var i=0; i <= 5; i++){
+    // for (var i=0; i <= 5; i++){
     
-        setTimeout( () => {
+        await 
             fetch(urlEstadoComando)
             .then(resp => resp.json())
-            .then( resp => console.log(resp))
-            .catch( err => console.log(err))        
-        }, 1000)
+            .then( resp => {
+                console.log(resp)
+                document.getElementsByClassName('circle')[0].style.backgroundColor = resp.comando
+            })
+            .catch( err => console.log(err))       
 
+    // }
+}
+
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+// Cria um semáforo
+const semaforo = async() => {
+
+  let comandos = [
+    'red', 
+    'yellow',
+    'green',
+    'blue',
+]
+
+  const tocarSom  = ( f ) => {
+
+    const player = new Audio(f);
+    player.play()
+
+  }
+ 
+   for( c=0; c <=   comandos.length; c++ ) {    
+        await enviarComando('black')
+        await sleep(100)
+        await enviarComando(comandos[c])
+        divMsg.innerHTML = `Contador: ${c}`
+        if ( comandos[c] == "yellow" ) { tocarSom('sons/som2.wav') }
+        await sleep(5000)
     }
 }

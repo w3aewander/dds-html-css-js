@@ -5,9 +5,13 @@
         <h2>Testando envio de comando para API</h2>  
     </div>
 
-        <div class="btn-group col-md-offset-4">
+        <div class="d-flex flex-column col-md-offset-4">
             <button class="btn btn-dark gap-1" 
                     onclick="enviarComando('black');">Desligar LED's</button>
+            
+            <button class="btn btn-danger gap-1" 
+                    onclick="semaforo();">Semáforo</button>
+
             <button class="btn btn-danger gap-1" 
                     onclick="enviarComando('red');">Ligar LED vermelho</button>
             <button class="btn btn-success gap-1" 
@@ -16,10 +20,13 @@
                     onclick="enviarComando('blue');">Ligar LED azul</button>
             <button class="btn btn-warning gap-1" 
                     onclick="enviarComando('yellow');">Ligar LED amarelo</button>
+                    
+                    <hr />
+                    <div class="circle"></div>
         </div>
+        
     </div>
 
-    <div class="circle" data-color="black">
-    </div>
+    
     
 </div>
