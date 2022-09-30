@@ -9,6 +9,9 @@
 >
 
 ![PHP+HTML5+MYSQL](https://www.yoan-jouve.com/wp-content/uploads/2020/12/520-5206022_php-mysql-logo-png-transparent-png-768x589.png "Logo PHP")
+
+## Fique ligado no changelog da aplicação
+
 ### Objetivos
 1. Praticar a criação de site utilizando PHP com HTML5;
 2. Criar aplicação SPA - Single Page Application (SPA);
@@ -38,10 +41,13 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 4. Criar uma conta no provedor de hospedagem gratuita - [Grátis PHP Host](http://www.gratisphphost.info/?i=1 "Grátis PHP Host")
 5. Publicar a aplicação em um servidor de hospedagem gratuito com suporte para a linguagem PHP;
 
+
 ### Change Log da versão
 1. Adicionado exemplo, na página conteúdo, de acesso HTTP usando os verbos GET e POST (requisições http).
 
 2. Criado alguns exemplos de array functions em javascript no modo assíncrono. 
+
+3. Mensagens do sistemas na barra de status. Usando a referência *divMsg* para injetar mensagens de texto na barra de status
 
 
 ## License

@@ -29,11 +29,12 @@ const animaFaixa = () => {
 
 //chamada de página com callback opcional...
 const carregarPagina = ( (pagina) => {
-
+    divMsg.innerHTML = 'carregando página ...'
     fetch(pagina)
         .then(resp => resp.text())
         .then(resp => {
             app.innerHTML = resp
+            divMsg.innerHTML = 'Pronto!'
         })
 
     scrollTo(0, 0)
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const processarEnvio = () => {
-
+    divMsg.innerHTML = 'processando envio de mensagem ...'
     setTimeout(() => {
         document.getElementById('form-contato').addEventListener('submit', (e) => {
             e.preventDefault()
@@ -91,10 +92,10 @@ const processarEnvio = () => {
                 e.target.email.value = ""
                 e.target.assunto.value = ""
                 e.target.mensagem.value = ""
-             })
 
+                divMsg.innerHTML = 'Pronto!'
 
-
+             })             
              return false;
         })
     }, 1000)
@@ -103,7 +104,7 @@ const processarEnvio = () => {
 
 
 const processarLogin = () => {
-
+    divMsg.innerHTML = 'Processando login ...'
     setTimeout(() => {
  
            document.getElementById('form-login').addEventListener('submit', (evt)=>{
@@ -131,6 +132,7 @@ const processarLogin = () => {
     } )
 
     //return false;
+
 }
 
 /**
@@ -138,7 +140,7 @@ const processarLogin = () => {
  * @param {*} comando 
  */
 const  enviarComando = async ( comando )  =>  {
-
+    divMsg.innerHTML = 'enviando comando ...'
     let cmd = new FormData();
     cmd.append("comando",comando)
 
@@ -149,6 +151,7 @@ const  enviarComando = async ( comando )  =>  {
     .finally( (r) => { 
         setTimeout( () => {
             estadoComando()
+            divMsg.innerHTML = 'Pronto!'
         }, 1000)
      })
 
@@ -158,7 +161,7 @@ const  enviarComando = async ( comando )  =>  {
  * @param void
  */
 const estadoComando = async() => {
-
+    divMsg.innerHTML = 'obtendo status do comando..'
     // for (var i=0; i <= 5; i++){
     
         await 
@@ -167,6 +170,7 @@ const estadoComando = async() => {
             .then( resp => {
                 console.log(resp)
                 document.getElementsByClassName('circle')[0].style.backgroundColor = resp.comando
+                divMsg.innerHTML = `Cor recebida: ${resp.comando}`
             })
             .catch( err => console.log(err))       
 
@@ -194,12 +198,16 @@ const semaforo = async() => {
 
   }
  
-   for( c=0; c <=   comandos.length; c++ ) {    
+   for( c=0; c < comandos.length; c++ ) {    
         await enviarComando('black')
         await sleep(100)
         await enviarComando(comandos[c])
-        divMsg.innerHTML = `Contador: ${c}`
-        if ( comandos[c] == "yellow" ) { tocarSom('sons/som2.wav') }
-        await sleep(5000)
+        divMsg.innerHTML = `Contador: ${c +1} - Cor: ${comandos[c]}`
+        if ( comandos[c] == "yellow" ) { 
+            tocarSom('sons/som2.wav') 
+        }
+        await sleep(5000) 
     }
+    
+    divMsg.innerHTML = 'Pronto!'
 }
