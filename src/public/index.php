@@ -40,17 +40,17 @@
 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-target="conteudo">Conteudo</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="conteudo"><i class="fa fa-lightbulb"></i> Conteúdo</a>
                 </li>
 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-target="contato" onclick="processarEnvio();">Contato</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="contato" onclick="processarEnvio();"><i class="fa fa-id-card fa-fw"></i> Contato</a>
                 </li>
                 
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-target="sobre"><i class="fa fa-ask fa-fw"></i> Sobre</a>
+                <a class="nav-link active" aria-current="page" href="#" data-target="sobre"><i class="fa fa-info-circle fa-fw"></i> Sobre</a>
                 </li>
             </ul>
             </div>

@@ -1,32 +1,22 @@
+<div class="d-flex flex-column justify-content-center">
+        <div class="jumbotron p-5 text-center">
+                <h2>Testando envio de comando para API</h2>
+        </div>
 
 
-  <div class="d-flex flex-column justify-content-center">
-    <div class="jumbotron p-5 text-center">
-        <h2>Testando envio de comando para API</h2>  
-    </div>
+                <div class="p-2 mx-auto">
 
-        <div class="d-flex flex-column col-md-offset-4">
-            <button class="btn btn-dark gap-1" 
-                    onclick="enviarComando('black');">Desligar LED's</button>
-            
-            <button class="btn btn-danger gap-1" 
-                    onclick="semaforo();">Semáforo</button>
-
-            <button class="btn btn-danger gap-1" 
-                    onclick="enviarComando('red');">Ligar LED vermelho</button>
-            <button class="btn btn-success gap-1" 
-                    onclick="enviarComando('green');">Ligar LED verde</button>
-            <button class="btn btn-primary gap-1" 
-                    onclick="enviarComando('blue');">Ligar LED azul</button>
-            <button class="btn btn-warning gap-1" 
-                    onclick="enviarComando('yellow');">Ligar LED amarelo</button>
-                    
-                    <hr />
-                    <div class="circle"></div>
+                        
+                        <button id="btn-semaforo" class="btn btn-secondary gap-1" onclick="semaforo();">Semáforo</button>
+                        
+                        <button id="btn-black" class="btn btn-dark gap-1" onclick="enviarComando('black');">Desligar LED's</button>                
+                        <button id="btn-green" class="btn btn-success gap-1" onclick="enviarComando('green');">Ligar LED verde</button>
+                        <button id="btn-yellow"   class="btn btn-warning gap-1" onclick="enviarComando('yellow');">Ligar LED amarelo</button>
+                        <button id="btn-red"   class="btn btn-danger  gap-1" onclick="enviarComando('red');">Ligar LED vermelho</button>
+                        <button id="btn-blue" class="btn btn-primary gap-1" onclick="enviarComando('blue');">Ligar LED azul</button>
+                        
+                </div>
+                        <div class="circle"></div>
+                        
         </div>
         
-    </div>
-
-    
-    
-</div>
