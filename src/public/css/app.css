@@ -9,6 +9,10 @@ main {
     background-color: #fafafa;
 }
 
+.btn {
+    width: 150px;
+    height: 90px;
+}
 nav a:hover {
     text-decoration: underline;
     text-decoration-color: rgb(239, 190, 139);
