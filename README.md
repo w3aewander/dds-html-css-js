@@ -47,7 +47,9 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 
 2. Criado alguns exemplos de array functions em javascript no modo assíncrono. 
 
-3. Mensagens do sistemas na barra de status. Usando a referência *divMsg* para injetar mensagens de texto na barra de status
+3. Mensagens do sistemas na barra de status. Usando a referência *divMsg* para injetar mensagens de texto na barra de status.
+
+4. Acrescentado recurso para um CRUD básico em PHP + JAVASCRIPT + HTML
 
 
 ## License
