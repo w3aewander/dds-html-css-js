@@ -7,20 +7,26 @@ namespace Composer\Autoload;
 class ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
+        'A' => 
         array (
-            'Wanderlei\\DdsHtmlJsCss\\' => 23,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Wanderlei\\DdsHtmlJsCss\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
+        'App\\Controllers\\ContatoController' => __DIR__ . '/../..' . '/src/Controllers/ContatoController.php',
+        'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Controller.php',
+        'App\\Entities\\Contato' => __DIR__ . '/../..' . '/src/Entities/Contato.php',
+        'App\\Models\\ContatoModel' => __DIR__ . '/../..' . '/src/Models/ContatoModel.php',
+        'App\\Persistence\\CRUD' => __DIR__ . '/../..' . '/src/Persistence/CRUD.php',
+        'App\\Persistence\\Conexao' => __DIR__ . '/../..' . '/src/Persistence/Conexao.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

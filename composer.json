@@ -2,7 +2,7 @@
     "name": "wanderlei/dds-html-js-css",
     "autoload": {
         "psr-4": {
-            "Wanderlei\\DdsHtmlJsCss\\": "src/"
+            "App\\": "src/"
         }
     },
 

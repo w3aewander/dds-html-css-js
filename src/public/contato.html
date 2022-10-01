@@ -31,17 +31,42 @@
 
             <div class="form-group">
                 <label for="mensagem">Mensagem</label>
-                <textarea name="mensagem " id="mensagem" rows="10" class="form-control" required></textarea>
+                <textarea name="mensagem " id="mensagem" rows="3" class="form-control" required></textarea>
             </div>
 
-            <div class="btn-group my-2">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-
+            <div class="btn-group gap-2 my-2">
+                <button type="submit" class="btn btn-primary" title="Enviar ...">
+                      <i class="fa fa-paper-plane"></i> Enviar mensasgem ...</button>
+                      <button type="button" onclick="obterContatos();" class="btn btn-info"><i class="fa fa-users"></i> Carregar contatos</button>
             </div>
 
         </form>
 
+    </div>
 
+    <div class="container">
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Assunto</th>
+                <th>Assunto</th>
+            </tr>
+            </thead>
+            <tbody id="tb-contatos">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        #Registros: 
+                    </td>    
+                </tr>
+            </tfoot>
+        </table>
 
     </div>
 
