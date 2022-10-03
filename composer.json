@@ -16,5 +16,7 @@
             "email": "wander.silva@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "slim/slim": "^4.10"
+    }
 }
