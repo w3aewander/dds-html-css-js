@@ -19,22 +19,28 @@
     //boa prática seria armazenar as credenciais em um arquivo separaco
     //ler o arquivo config.json na raiz do projeto.
  
-    //file_get_contents('/home/wanderlei/Projetos/dds-html-js-css/config.json');
-    $json = '{
-      "dbhost":"localhost",
-      "dbase": "dds311",
-      "dbuser":"root",
-      "dbpass":"r00t@Abc" 
-     }';
+    $json = file_get_contents( __DIR__ . '/../../config.json');
+    
+    // $json = '{
+    //   "dbhost":"localhost",
+    //   "dbase": "dds311",
+    //   "dbuser":"root",
+    //   "dbpass":"r00t@Abc" 
+    //  }';
 
     $arr_json =  json_decode($json);
 
     //die(var_dump($arr_json->dbhost));
 
-    $dbhost = 'localhost';//$arr_json->dbhost;
-    $dbname = 'dds311';//$arr_json->dbase;
-    $dbuser = 'root';//$arr_json->dbuser;
-    $dbpwd  = 'r00t@Abc';//$arr_json->dbpass;
+    // $dbhost = 'localhost';//$arr_json->dbhost;
+    // $dbname = 'dds311';//$arr_json->dbase;
+    // $dbuser = 'root';//$arr_json->dbuser;
+    // $dbpwd  = 'r00t@Abc';//$arr_json->dbpass;
+
+    $dbhost = $arr_json->dbhost;
+    $dbname = $arr_json->dbase;
+    $dbuser = $arr_json->dbuser;
+    $dbpwd  = $arr_json->dbpass;
 
     $options    = [
       \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

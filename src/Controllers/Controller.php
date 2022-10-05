@@ -9,7 +9,8 @@
  namespace App\Controllers;
 
 
- class Controller {
+ abstract class Controller {
   
     public function __construct() { }
- }
+ 
+}

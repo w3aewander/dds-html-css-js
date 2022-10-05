@@ -9,9 +9,7 @@
 
 
  class ContatoModel {
-
-   
-
+    
     private  $con;
     private \App\Entities $entity;
     

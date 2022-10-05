@@ -7,10 +7,13 @@
  */
 
  namespace App\Controllers;
-
+ 
+ use \App\Entities\Contato as Contato;
+ use \App\Models\ContatoModel as ContatoModel;
+ 
  class ContatoController extends Controller{
-     private \App\Entities\Contato $entity;
-     private \App\Models\ContatoModel $model;
+     private Contato $entity;
+     private ContatoModel $model;
     
      public function __construct(){
         parent::__construct();
@@ -26,10 +29,14 @@
      public function getAll(){  
         $contatos = $this->model->getAll();
         if ( $contatos ){
-            return json_encode ( ['success'=> true, 'data' => $contatos, 'message' => 'dados obtidos com sucesso.' ]);
+            return json_encode ( ['success'=> true, 
+               'data' => $contatos, 
+               'message' => 'dados obtidos com sucesso.' ]);
         }
 
-        return ( ['success'=> false, 'data' => $contatos, 'message' => 'consulta não retornou dados' ]);
+        return ( ['success'=> false, 
+                  'data' => $contatos, 
+                  'message' => 'consulta não retornou dados' ]);
      }
 
      public function getById($id){
