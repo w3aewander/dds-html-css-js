@@ -37,7 +37,14 @@
             <div class="btn-group gap-2 my-2">
                 <button type="submit" class="btn btn-primary" title="Enviar ...">
                       <i class="fa fa-paper-plane"></i> Enviar mensasgem ...</button>
-                      <button type="button" onclick="obterContatos();" class="btn btn-info"><i class="fa fa-users"></i> Carregar contatos</button>
+                      
+                      <button type="reset" onclick="" class="btn btn-success">
+                           <i class="fa fa-user-plus"></i> Novo</button>
+                      
+                           <button type="button" onclick="obterContatos();" class="btn btn-info">
+                           <i class="fa fa-users"></i> Carregar contatos</button>
+
+
             </div>
 
         </form>
@@ -54,6 +61,7 @@
                 <th>Email</th>
                 <th>Assunto</th>
                 <th>Assunto</th>
+                <th><i class="fa fa-cogs"></i></th>
             </tr>
             </thead>
             <tbody id="tb-contatos">
