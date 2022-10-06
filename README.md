@@ -54,13 +54,13 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 5. Um arquivo de configuração **'config.json'** deve ser criado na raiz do projeto.
 >{
 >
->       "dbhost":"localhost",
+>       "dbhost":"localhost ou ip do SGBD",
 >    
->       "dbase": "dds311",
+>       "dbase": "nome_da_base_de_dados",
 >
->       "dbuser":"root", 
+>       "dbuser":"usuário_do_banco", 
 >
->       "dbpass":"r00t@Abc",
+>       "dbpass":"senha_do_banco",
 >
 >}
 
