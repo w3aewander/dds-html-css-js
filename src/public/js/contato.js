@@ -1,10 +1,24 @@
 /**
- *  Contatos.
+ * 
+ * Carrega os dados que já estão visualizados na linha da tabela
+ * e popula os dados dos elementos inputs do formulário
+ * evitando assim que nova requisição seja enviada para o servidor
+ * @author Wanderlei Silva do Carmo <wander.silva@gmail.com>
+ * @version 1.0
+ * 
  */
 
 const popularForm = (elem) => {
+  // pega os dados do elemento pai
   const ct = elem.parentNode.parentNode
-  console.log(ct.getAttribute('data-nome'))
+
+  // popula os inputs do formulário
+  document.getElementById("form-contato").id.value = ct.getAttribute('data-id')
+  document.getElementById("form-contato").nome.value = ct.getAttribute('data-nome')
+  document.getElementById("form-contato").email.value = ct.getAttribute('data-email')
+  document.getElementById("form-contato").assunto.value = ct.getAttribute('data-assunto')
+  document.getElementById("form-contato").mensagem.value = ct.getAttribute('data-mensagem')
+  
 }
 
 const obterContatos = () => {
