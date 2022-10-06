@@ -51,7 +51,17 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 
 4. Acrescentado recurso para um CRUD básico em PHP + JAVASCRIPT + HTML
 
-
+5. Um arquivo de configuração **'config.json'** deve ser criado na raiz do projeto.
+>{
+>    "_dbhost_":"localhost",
+>    "dbhost":"sql102.gratisphphost.info",
+>    "dbase": "dds311",
+>    "_dbuser_":"root", 
+>     "dbuser": "phpgr_32610024",
+>    "_dbpass_":"r00t@Abc",
+>    "dbpass": "W4nd3rl31" 
+>}
+ 
 ## License
 
 MIT License
