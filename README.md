@@ -88,6 +88,7 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 
 . PHP Extension Pack
 . PHP Interlisense
+. PHP Getters & Setters
 . Format HTML in PHP
 . PHP Namespace Resolver
 . phpfmt - PHP Formatter

@@ -5,7 +5,7 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 header('Access-Control-Allow-Origin:*');
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: Application/json; charset=UTF-8');
 
  ini_set('display_errors', TRUE);
  ini_set('error_reporting', E_ALL|E_CORE_WARNING);

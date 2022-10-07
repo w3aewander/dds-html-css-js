@@ -8,8 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controllers\\ContatoController' => $baseDir . '/src/Controllers/ContatoController.php',
     'App\\Controllers\\Controller' => $baseDir . '/src/Controllers/Controller.php',
+    'App\\Controllers\\UsuarioController' => $baseDir . '/src/Controllers/UsuarioController.php',
     'App\\Entities\\Contato' => $baseDir . '/src/Entities/Contato.php',
+    'App\\Entities\\Usuario' => $baseDir . '/src/Entities/Usuario.php',
     'App\\Models\\ContatoModel' => $baseDir . '/src/Models/ContatoModel.php',
+    'App\\Models\\UsuarioModel' => $baseDir . '/src/Models/UsuarioModel.php',
     'App\\Persistence\\CRUD' => $baseDir . '/src/Persistence/CRUD.php',
     'App\\Persistence\\Conexao' => $baseDir . '/src/Persistence/Conexao.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

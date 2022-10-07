@@ -1,20 +1,23 @@
 <?php
 /**
  * Model contato
- * --------------------------------
+ * 
+ * @author Wanderlei Silva do Carmo <wander.silva@gmail.com>
+ * @version 1.0
  * 
  */
 
  namespace App\Models;
 
+ use \App\Persistence\Conexao as Conexao;
 
- class ContatoModel extends App\Persistence {
+ class ContatoModel  {
     
-    private  $con;
-    private \App\Entities $entity;
+    protected  $con;
+    protected \App\Entities\Contato $entity;
     
     public function __construct() {
-        //$this->con = \App\Persistence\Conexao::getInstance();
+        $this->con = Conexao::getInstance();
     }
 
     public function getAll(){

@@ -23,8 +23,11 @@ class ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0
     public static $classMap = array (
         'App\\Controllers\\ContatoController' => __DIR__ . '/../..' . '/src/Controllers/ContatoController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Controller.php',
+        'App\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/src/Controllers/UsuarioController.php',
         'App\\Entities\\Contato' => __DIR__ . '/../..' . '/src/Entities/Contato.php',
+        'App\\Entities\\Usuario' => __DIR__ . '/../..' . '/src/Entities/Usuario.php',
         'App\\Models\\ContatoModel' => __DIR__ . '/../..' . '/src/Models/ContatoModel.php',
+        'App\\Models\\UsuarioModel' => __DIR__ . '/../..' . '/src/Models/UsuarioModel.php',
         'App\\Persistence\\CRUD' => __DIR__ . '/../..' . '/src/Persistence/CRUD.php',
         'App\\Persistence\\Conexao' => __DIR__ . '/../..' . '/src/Persistence/Conexao.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
