@@ -67,13 +67,21 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 6. Para garantir que o composer seja devidamente adaptável a versão do PHP instalado na máquina (host) de destino foi adicionada uma nova seção no arquivo composer.json com o seguinte conteúdo:
 > 
 > ...
+>
 >    "config": {
+>
 >		"optimize-autoloader": true,
+>
 >		"prepend-autoloader": false,
+>
 >		"platform": {
+>
 >			"php": "7.0"
+>
 >		}
+>
 >	},
+>
 > ...
 
 ## License
