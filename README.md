@@ -84,11 +84,19 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 >
 > ...
 
-7. Instalado as extensões no **Visual Studio Code** para manipular o banco de dados MySQL ou MariaDB:
-.
+7. Instalado as extensões no **Visual Studio Code** para codar em PHP e manipular o banco de dados MySQL ou MariaDB:
+
+. PHP Extension Pack
+. PHP Interlisense
+. Format HTML in PHP
+. PHP Namespace Resolver
+. phpfmt - PHP Formatter
+. PHP Getters & Setters
+. PHPDoc Comment
+. PHPDoc Generator
+. MySQL
 . SQL Tools
 . SQLTools MySQL/MariaDB
-.
 
 ## License
 

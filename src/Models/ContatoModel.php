@@ -8,13 +8,13 @@
  namespace App\Models;
 
 
- class ContatoModel {
+ class ContatoModel extends App\Persistence {
     
     private  $con;
     private \App\Entities $entity;
     
     public function __construct() {
-        $this->con = \App\Persistence\Conexao::getInstance();
+        //$this->con = \App\Persistence\Conexao::getInstance();
     }
 
     public function getAll(){
