@@ -84,6 +84,12 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 >
 > ...
 
+7. Instalado as extensões no **Visual Studio Code** para manipular o banco de dados MySQL ou MariaDB:
+.
+. SQL Tools
+. SQLTools MySQL/MariaDB
+.
+
 ## License
 
 MIT License
