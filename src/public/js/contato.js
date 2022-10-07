@@ -27,7 +27,7 @@ const obterContatos = () => {
     
     let html = ""
 
-    fetch('/contato.php')
+    fetch('contato.php')
     .then (resp => resp.json())
     .then ( resp => {
         //const json = JSON.parse(resp)
