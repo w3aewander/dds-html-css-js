@@ -6,6 +6,14 @@
         }
     },
 
+    "config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false,
+		"platform": {
+			"php": "7.0"
+		}
+	},
+
     "scripts" : {
          "start": "php -S 0.0.0.0:9000 -t src/public"
     },
@@ -15,8 +23,5 @@
             "name": "Wanderlei Silva",
             "email": "wander.silva@gmail.com"
         }
-    ],
-    "require": {
-        "slim/slim": "^4.10"
-    }
+    ]
 }

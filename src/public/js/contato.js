@@ -30,11 +30,11 @@ const obterContatos = () => {
     fetch('/contato.php')
     .then (resp => resp.json())
     .then ( resp => {
-        const json = JSON.parse(resp)
-        console.log(json.data)
+        //const json = JSON.parse(resp)
+        console.log(resp.data)
 
-        json.data.forEach( (e) => {
-            console.log(e.id)
+        resp.data.forEach( (e) => {
+            console.log(e)
             html += `<tr data-id="${e.id}" data-nome="${e.nome}" 
                          data-email="${e.email}" data-assunto="${e.assunto}" 
                          data-mensagem="${e.mensagem}">
