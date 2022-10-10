@@ -27,7 +27,7 @@ const obterContatos = () => {
     
     let html = ""
 
-    fetch('contato.php')
+    fetch('/contato.php?show=all')
     .then (resp => resp.json())
     .then ( resp => {
         //const json = JSON.parse(resp)
@@ -52,10 +52,42 @@ const obterContatos = () => {
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
-                    </tr>`
-            
+                    </tr>`           
         })
     })
     .finally( ()  =>  tbContatos.innerHTML = html )
+}
+
+
+const salvarContato = () => {
+
+    const id =       parseInt(document.getElementById('id').value);
+    const nome =     document.getElementById('nome').value;
+    const email =    document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    formContato = new FormData();
+    formContato.append('id', id);
+    formContato.append('nome',nome);
+    formContato.append('email', email);
+    formContato.append('mensagem', mensagem);
+
+    let salvar = ""
+
+    if ( id > 0 ){
+       salvar = fetch('contato.php', {
+                               method: 'PUT', 
+                               body: formContato, 
+                               headers: { 'Content-Type': 'x-www-form-url-encoded'} 
+                            })
+                            
+    } else {
+       salvar = fetch('contato.php', {
+            method: 'POST', 
+            body: formContato, 
+            headers: { 'Content-Type': 'x-www-form-url-encoded'} 
+         })
+    }
+    salvar.then(resp => console.log(resp)).catch(err => console.log(err))
 }
 

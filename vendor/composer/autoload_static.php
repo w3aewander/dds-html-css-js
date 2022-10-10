@@ -20,6 +20,16 @@ class ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Slim' => 
+            array (
+                0 => __DIR__ . '/..' . '/slim/slim',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'App\\Controllers\\ContatoController' => __DIR__ . '/../..' . '/src/Controllers/ContatoController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Controller.php',
@@ -27,10 +37,32 @@ class ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0
         'App\\Entities\\Contato' => __DIR__ . '/../..' . '/src/Entities/Contato.php',
         'App\\Entities\\Usuario' => __DIR__ . '/../..' . '/src/Entities/Usuario.php',
         'App\\Models\\ContatoModel' => __DIR__ . '/../..' . '/src/Models/ContatoModel.php',
+        'App\\Models\\ICRUD' => __DIR__ . '/../..' . '/src/Models/ICRUD.php',
         'App\\Models\\UsuarioModel' => __DIR__ . '/../..' . '/src/Models/UsuarioModel.php',
         'App\\Persistence\\CRUD' => __DIR__ . '/../..' . '/src/Persistence/CRUD.php',
         'App\\Persistence\\Conexao' => __DIR__ . '/../..' . '/src/Persistence/Conexao.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Slim\\Environment' => __DIR__ . '/..' . '/slim/slim/Slim/Environment.php',
+        'Slim\\Exception\\Pass' => __DIR__ . '/..' . '/slim/slim/Slim/Exception/Pass.php',
+        'Slim\\Exception\\Stop' => __DIR__ . '/..' . '/slim/slim/Slim/Exception/Stop.php',
+        'Slim\\Helper\\Set' => __DIR__ . '/..' . '/slim/slim/Slim/Helper/Set.php',
+        'Slim\\Http\\Cookies' => __DIR__ . '/..' . '/slim/slim/Slim/Http/Cookies.php',
+        'Slim\\Http\\Headers' => __DIR__ . '/..' . '/slim/slim/Slim/Http/Headers.php',
+        'Slim\\Http\\Request' => __DIR__ . '/..' . '/slim/slim/Slim/Http/Request.php',
+        'Slim\\Http\\Response' => __DIR__ . '/..' . '/slim/slim/Slim/Http/Response.php',
+        'Slim\\Http\\Util' => __DIR__ . '/..' . '/slim/slim/Slim/Http/Util.php',
+        'Slim\\Log' => __DIR__ . '/..' . '/slim/slim/Slim/Log.php',
+        'Slim\\LogWriter' => __DIR__ . '/..' . '/slim/slim/Slim/LogWriter.php',
+        'Slim\\Middleware' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware.php',
+        'Slim\\Middleware\\ContentTypes' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware/ContentTypes.php',
+        'Slim\\Middleware\\Flash' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware/Flash.php',
+        'Slim\\Middleware\\MethodOverride' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware/MethodOverride.php',
+        'Slim\\Middleware\\PrettyExceptions' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware/PrettyExceptions.php',
+        'Slim\\Middleware\\SessionCookie' => __DIR__ . '/..' . '/slim/slim/Slim/Middleware/SessionCookie.php',
+        'Slim\\Route' => __DIR__ . '/..' . '/slim/slim/Slim/Route.php',
+        'Slim\\Router' => __DIR__ . '/..' . '/slim/slim/Slim/Router.php',
+        'Slim\\Slim' => __DIR__ . '/..' . '/slim/slim/Slim/Slim.php',
+        'Slim\\View' => __DIR__ . '/..' . '/slim/slim/Slim/View.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -38,6 +70,7 @@ class ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitb77fe26474961f9e0f651cd21b8db5f0::$classMap;
 
         }, null, ClassLoader::class);

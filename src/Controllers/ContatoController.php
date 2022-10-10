@@ -49,10 +49,10 @@
      }
 
      //Incluir um novo registro na base de dados
-     public function add(Contato $contato){
-        $this->model = new Contato();
+     public function add(Contato $entity){
+        $this->model = new ContatoModel();
        
-        if ( $this->model->add($contato) ){
+        if ( $this->model->add($entity) ){
             $this->success = true;
             $this->data = [];
             $this->msg = 'Registro atualizado com sucesso.';

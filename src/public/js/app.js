@@ -96,9 +96,9 @@ const processarEnvio = () => {
     setTimeout(() => {
         document.getElementById('form-contato').addEventListener('submit', (e) => {
             e.preventDefault()
-            alert('dados do formulário capturado.')
+            // alert('dados do formulário capturado.')
+           
 
-            
              let constObjForm = new FormData()
 
              constObjForm.append("nome",e.target.nome.value)
@@ -111,13 +111,14 @@ const processarEnvio = () => {
              .then( resp => { 
                 console.log(resp)
 
+                salvarContato()
+
                 document.getElementById('retorno').innerHTML = `
                    <h2>Dados Recebidos do Servidor</h2>
                    <strong>Nome:</strong>${resp.nome}<br>
                    <strong>E-mail:</strong>${resp.email}<br>
                    <strong>Assunto:</strong>${resp.assunto}<br>
                    <strong>Mensagem:</strong>${resp.mensagem}<br>
-
                 `
 
                 e.target.nome.value = ""

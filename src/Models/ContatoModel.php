@@ -32,4 +32,32 @@
         return $data;
     }
 
+    public function add(\App\Entities\Contato $entity): bool{
+
+        //die(var_dump($entity));
+
+        $sql  = ' INSERT INTO contatos (id, nome, email, assunto, mensagem) ';
+        $sql .= ' VALUES(?,?,?,?,? ) ' ;
+
+        $stm = $this->con->prepare($sql);
+
+        $stm->bindValue(1, "0");
+        $stm->bindValue(2, $entity->getNome());
+        $stm->bindValue(3, $entity->getEmail());
+        $stm->bindValue(4, $entity->getAssunto());
+        $stm->bindValue(5, $entity->getMessage());
+
+        $inserted = $stm->execute();
+
+        die(var_dump($iserted));
+        
+        // return [
+        //     'success' => $inserted,
+        //     'data' => [],
+        //     'message' => $inserted ? 'registro salvo com sucesso' : 'não foi possível incluir o registro'
+        // ];
+
+        return $inserted;
+    }
+
  }

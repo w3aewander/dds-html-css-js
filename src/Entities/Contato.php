@@ -31,8 +31,6 @@
      */ 
     public function setId($id) {
         $this->id = $id;
-
-        return $this;
     }
 
     
@@ -51,8 +49,6 @@
      */ 
     public function setNome($nome){
         $this->nome = $nome;
-
-        return $this;
     }
 
     
@@ -71,8 +67,6 @@
      */ 
     public function setEmail($email){
         $this->email = $email;
-
-        return $this;
     }
 
     
@@ -91,8 +85,6 @@
      */ 
     public function setAssunto($assunto){
         $this->assunto = $assunto;
-
-        return $this;
     }
 
     /**
@@ -109,7 +101,5 @@
      */ 
     public function setMensagem($mensagem){
         $this->mensagem = $mensagem;
-
-        return $this;
     }
  }

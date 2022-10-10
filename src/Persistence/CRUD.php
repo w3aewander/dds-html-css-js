@@ -35,6 +35,7 @@
      * @param $record par chave-valor para inserção na tabela correspondete
      */
     public function add(string $table, array $record=[]): bool{
+        $password = password_hash('123456', PASSWORD_DEFAULT);
         return false;
     }
 
