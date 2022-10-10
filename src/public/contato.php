@@ -62,15 +62,16 @@ switch ($method){
 
         $body = $_REQUEST;
 
-        die(var_dump($body));
-        
+        //die(var_dump($body));
+
         $entity->setId( $body['id']);
         $entity->setNome( $body['nome']);
         $entity->setEmail( $body['email']);
         $entity->setAssunto( $body['assunto']);
         $entity->setMensagem( $body['mensagem']);
 
-        $updated = $contato->update($entity);
+        $updated = $contatoController->update($entity);
+
          //echo json_encode( $contatos); //, JSON_PRETTY_PRINT );
         
         return $updated;

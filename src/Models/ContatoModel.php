@@ -64,10 +64,10 @@
            //die(var_dump($entity));
 
            $sql  = ' UPDATE contatos                             
-                            SET nome = ?, 
-                            SET email = ?, 
-                            SET assunto = ?, 
-                            SET mensagem = ? ';
+                            SET nome = ? , 
+                            email = ? , 
+                            assunto = ?, 
+                            mensagem = ? ';
 
            $sql .= ' WHERE id = ? ' ;
               
