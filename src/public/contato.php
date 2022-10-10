@@ -50,11 +50,30 @@ switch ($method){
     break;
 
     case 'PUT':        
+
+        parse_str(file_get_contents("php://input"), $_PUT);
+
+	    foreach ($_PUT as $key => $value){
+		    unset($_PUT[$key]);
+		    $_PUT[str_replace('amp;', '', $key)] = $value;
+        }
+        
+        $_REQUEST = array_merge($_REQUEST, $_PUT);
+
         $body = $_REQUEST;
 
-        $contatos = $contato->update($body);
+        die(var_dump($body));
+        
+        $entity->setId( $body['id']);
+        $entity->setNome( $body['nome']);
+        $entity->setEmail( $body['email']);
+        $entity->setAssunto( $body['assunto']);
+        $entity->setMensagem( $body['mensagem']);
+
+        $updated = $contato->update($entity);
          //echo json_encode( $contatos); //, JSON_PRETTY_PRINT );
         
+        return $updated;
     break;
 
     case 'DELETE':
