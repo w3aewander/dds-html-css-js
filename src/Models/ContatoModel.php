@@ -41,16 +41,16 @@
 
         $stm = $this->con->prepare($sql);
 
-        $stm->bindValue(1, "0");
+        $stm->bindValue(1, $entity->getId());
         $stm->bindValue(2, $entity->getNome());
         $stm->bindValue(3, $entity->getEmail());
         $stm->bindValue(4, $entity->getAssunto());
-        $stm->bindValue(5, $entity->getMessage());
+        $stm->bindValue(5, $entity->getMensagem());
 
         $inserted = $stm->execute();
 
-        die(var_dump($iserted));
-        
+        //die(var_dump($inserted));
+
         // return [
         //     'success' => $inserted,
         //     'data' => [],
@@ -58,6 +58,38 @@
         // ];
 
         return $inserted;
+    }
+
+    public function update(\App\Entities\Contato $entity): bool{
+           //die(var_dump($entity));
+
+           $sql  = ' UPDATE contatos                             
+                            SET nome = ?, 
+                            SET email = ?, 
+                            SET assunto = ?, 
+                            SET mensagem = ? ';
+
+           $sql .= ' WHERE id = ? ' ;
+              
+           $stm = $this->con->prepare($sql);
+   
+           $stm->bindValue(1, $entity->getNome());
+           $stm->bindValue(2, $entity->getEmail());
+           $stm->bindValue(3, $entity->getAssunto());
+           $stm->bindValue(4, $entity->getMensagem());
+           $stm->bindValue(5, $entity->getId());
+   
+           $updated = $stm->execute();
+   
+           //die(var_dump($inserted));
+   
+        //    return [
+        //        'success' => $updated,
+        //        'data' => [],
+        //        'message' => $update ? 'registro salvo com sucesso' : 'não foi possível incluir o registro'
+        //    ];
+   
+           return $updated;
     }
 
  }

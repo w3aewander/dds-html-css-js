@@ -12,7 +12,7 @@ ini_set('display_errors', TRUE);
 ini_set('error_reporting', E_ALL|E_CORE_WARNING);
 
 $method = $_SERVER['REQUEST_METHOD'];
-$contato = new \App\Controllers\ContatoController();
+$contatoController = new \App\Controllers\ContatoController();
 $entity = new \App\Entities\Contato;
 
 $contatos = "";
@@ -20,13 +20,14 @@ $contatos = "";
 switch ($method){
     
     case 'GET':
-        $contatos = $contato->getAll();        
+        $contatos = $contatoController->getAll();        
         //echo json_encode( $contatos); //, JSON_PRETTY_PRINT );
         //echo $contatos;
     break;
 
     case 'POST':
         $body = $_REQUEST;
+        //die( var_dump($body) );
 
         $entity->setId( $body['id']);
         $entity->setNome( $body['nome']);
@@ -34,9 +35,12 @@ switch ($method){
         $entity->setAssunto( $body['assunto']);
         $entity->setMensagem( $body['mensagem']);
 
-        $saved = $contato->add($entity);
+        //die( var_dump($entity) );
+        $saved = $contatoController->add($entity);
          //echo json_encode( $contatos); //, JSON_PRETTY_PRINT );
         
+        //die(var_dump($saved));
+
         return [
                'success'=>$saved,
                'data' => [],
@@ -62,5 +66,5 @@ switch ($method){
         
 }
 
-echo $contatos;
+print($contatos);
 
