@@ -102,7 +102,6 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 8. CRUD completado para o módulo de exemplo contato:
 
 - Nesta versão é possível CRIAR, EDITAR/ATUALIZAR e EXCLUIR um registro da tabela "contatos".
-
 - Arquivos do módulo completos.
 
 
