@@ -86,18 +86,18 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 
 7. Instalado as extensões no **Visual Studio Code** para codar em PHP e manipular o banco de dados MySQL ou MariaDB:
 
-. PHP Extension Pack
-. PHP Interlisense
-. PHP Getters & Setters
-. Format HTML in PHP
-. PHP Namespace Resolver
-. phpfmt - PHP Formatter
-. PHP Getters & Setters
-. PHPDoc Comment
-. PHPDoc Generator
-. MySQL
-. SQL Tools
-. SQLTools MySQL/MariaDB
+- PHP Extension Pack
+- PHP Interlisense
+- PHP Getters & Setters
+- Format HTML in PHP
+- PHP Namespace Resolver
+- phpfmt - PHP Formatter
+- PHP Getters & Setters
+- PHPDoc Comment
+- PHPDoc Generator
+- MySQL
+- SQL Tools
+- SQLTools MySQL/MariaDB
 
 8. CRUD completado para o módulo de exemplo contato:
 
