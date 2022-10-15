@@ -80,6 +80,7 @@ const salvarContato = async (e) => {
     //console.log(formContato.toString())
     if ( id > 0 ){
         fetch('contato.php', {
+                               mode: 'cors',
                                method: 'PUT', 
                                body: new URLSearchParams(formContato), 
                                headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
@@ -92,6 +93,7 @@ const salvarContato = async (e) => {
 
     } else {
        fetch('contato.php', {
+            mode: 'cors',
             method: 'POST', 
             body: new URLSearchParams(formContato), 
             headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
@@ -113,6 +115,7 @@ const excluirContato = (id) => {
     let salvar = undefined
     
     fetch(`contato.php?id=${id}`, {
+        mode: 'cors',
         method: 'DELETE', 
         //body: new URLSearchParams(formContato), 
         //headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
