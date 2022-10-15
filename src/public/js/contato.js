@@ -27,7 +27,7 @@ const obterContatos = () => {
     
     let html = ""
 
-    fetch('/contato.php')
+    fetch('contato.php')
     .then (resp => resp.json())
     .then ( resp => {
         //const json = JSON.parse(resp)
@@ -40,15 +40,15 @@ const obterContatos = () => {
                          data-mensagem="${e.mensagem}">
 
                         <td>${e.id}</td>
-                        <td>${e.nome}</td>
+                        <!-- <td>${e.nome}</td> -->
                         <td>${e.email}</td>
-                        <td>${e.assunto}</td>
-                        <td>${e.mensagem}</td>
+                        <!-- <td>${e.assunto}</td> -->
+                        <!-- <td>${e.mensagem}</td> -->
                         <td>
                            <button type="button" onclick="popularForm(this);"   class="btn btn-info btn-sm">
                                 <i class="fa fa-edit"></i>
                             </button>
-                           <button type="button" class="btn btn-danger btn-sm">
+                           <button type="button" onclick="excluirContato(${e.id})" class="btn btn-danger btn-sm">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
@@ -59,35 +59,70 @@ const obterContatos = () => {
 }
 
 
-const salvarContato = () => {
+const salvarContato = async (e) => {
 
-    const id =       parseInt(document.getElementById('id').value);
+    const id =       document.getElementById('id').value;
     const nome =     document.getElementById('nome').value;
+    const assunto =  document.getElementById('assunto').value;
     const email =    document.getElementById('email').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    formContato = new FormData();
+    
+    let formContato = new FormData();
     formContato.append('id', id);
     formContato.append('nome',nome);
+    formContato.append('assunto', assunto)
     formContato.append('email', email);
     formContato.append('mensagem', mensagem);
-
-    let salvar = ""
-
+    
+    let salvar = undefined
+    
+    //console.log(formContato.toString())
     if ( id > 0 ){
-       salvar = fetch('contato.php', {
+        fetch('contato.php', {
                                method: 'PUT', 
-                               body: formContato, 
-                               headers: { 'Content-Type': 'x-www-form-url-encoded'} 
-                            })
+                               body: new URLSearchParams(formContato), 
+                               headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
+        })
+         .then(resp => resp.json())
+         .then(resp => { console.log(resp);obterContatos() })
+         .catch(err => console.log(err))
                             
-    } else {
-       salvar = fetch('contato.php', {
-            method: 'POST', 
-            body: formContato, 
-            headers: { 'Content-Type': 'x-www-form-url-encoded'} 
-         })
-    }
-    salvar.then(resp => console.log(resp)).catch(err => console.log(err))
-}
+        console.log('atualizando...');
 
+    } else {
+       fetch('contato.php', {
+            method: 'POST', 
+            body: new URLSearchParams(formContato), 
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+         .then(resp => resp.json())
+         .then(resp => {console.log(resp); obterContatos()})
+         .catch(err => console.log(err))
+
+         
+         console.log('incluindo novo...')
+        }
+    }
+
+const excluirContato = (id) => {
+    
+    let formContato = new FormData();
+    formContato.append('id', id);
+    
+    let salvar = undefined
+    
+    fetch(`contato.php?id=${id}`, {
+        method: 'DELETE', 
+        //body: new URLSearchParams(formContato), 
+        //headers: { 'Content-Type': 'application/x-www-form-urlencoded'} 
+     })
+     .then(resp => resp.json())
+     .then(resp => {console.log(resp); obterContatos()})
+     .catch(err => console.log(err))
+
+     
+     console.log('excluindo o registro...')
+}
+    
+    

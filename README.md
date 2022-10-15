@@ -99,6 +99,12 @@ Trata-se de uma abordagem em que uma aplicação WEB é criada utilizando apenas
 . SQL Tools
 . SQLTools MySQL/MariaDB
 
+8. CRUD completado para o módulo de exemplo contato
+
+. nesta versão é possível CRIAR, EDITAR/ATUALIZAR e EXCLUIR um registro da tabela "contatos".
+. Arquivos do módulo completos.
+
+
 ## License
 
 MIT License

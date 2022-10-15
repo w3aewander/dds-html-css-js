@@ -35,3 +35,6 @@ nav a:hover {
     background-color: black;
     border-radius: 50%;
 }
+.container {
+    background-image: linear-gradient(rgb(212, 211, 211), rgb(235, 234, 234), #fafafa);
+}

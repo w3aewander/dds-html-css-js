@@ -92,4 +92,23 @@
            return $updated;
     }
 
+    public function delete($id){
+        $sql  = ' DELETE FROM contatos '; 
+        $sql .= ' WHERE id = ? ' ;
+
+        $stm = $this->con->prepare($sql);
+        $stm->bindValue(1, $id);
+
+        $deleted = $stm->execute();
+
+
+         return json_encode([
+               'success' => $deleted,
+               'data' => [],
+               'message' => $deleted ? 'registro excluído com sucesso' : 'não foi possível excluir o registro'
+           ]);
+
+        //return $updated;      
+    } 
+
  }

@@ -98,37 +98,41 @@ const processarEnvio = () => {
             e.preventDefault()
             // alert('dados do formulário capturado.')
            
+            //console.log(this.id.value)
 
              let constObjForm = new FormData()
 
-             constObjForm.append("nome",e.target.nome.value)
-             constObjForm.append("email",e.target.email.value)
-             constObjForm.append("assunto",e.target.assunto.value)
-             constObjForm.append("mensagem",e.target.mensagem.value)
+             constObjForm.append("id", this.id.value)
+             constObjForm.append("nome",this.nome.value)
+             constObjForm.append("email",this.email.value)
+             constObjForm.append("assunto",this.assunto.value)
+             constObjForm.append("mensagem",this.mensagem.value)
              
-             fetch('processarEnvio.php', {method:'POST', body:constObjForm})
-             .then( resp => resp.json() )
-             .then( resp => { 
-                console.log(resp)
+            //  fetch('contato.php', {method:'POST', body:constObjForm})
+            //  .then( resp => resp.json() )
+            //  .then( resp => { 
+            //     console.log(resp)
 
-                salvarContato()
+                console.log(constObjForm)
 
-                document.getElementById('retorno').innerHTML = `
-                   <h2>Dados Recebidos do Servidor</h2>
-                   <strong>Nome:</strong>${resp.nome}<br>
-                   <strong>E-mail:</strong>${resp.email}<br>
-                   <strong>Assunto:</strong>${resp.assunto}<br>
-                   <strong>Mensagem:</strong>${resp.mensagem}<br>
-                `
+                salvarContato(constObjForm)
 
-                e.target.nome.value = ""
-                e.target.email.value = ""
-                e.target.assunto.value = ""
-                e.target.mensagem.value = ""
+                // document.getElementById('retorno').innerHTML = `
+                //    <h2>Dados Recebidos do Servidor</h2>
+                //    <strong>Nome:</strong>${resp.nome}<br>
+                //    <strong>E-mail:</strong>${resp.email}<br>
+                //    <strong>Assunto:</strong>${resp.assunto}<br>
+                //    <strong>Mensagem:</strong>${resp.mensagem}<br>
+                //`
+
+                this.nome.value = ""
+                this.email.value = ""
+                this.assunto.value = ""
+                this.mensagem.value = ""
 
                 divMsg.innerHTML = 'Pronto!'
 
-             })             
+            //  })             
              return false;
         })
     }, 1000)

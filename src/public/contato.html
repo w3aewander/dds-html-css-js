@@ -12,8 +12,8 @@
             <!-- este campo não pode ser editado e por isso deve estar desabilitado para alterações com readonly -->
             <!-- e o valor padrão deverá ser zero para que quando o botão reset for pressionado já seja populado com "zero" -->
             <div class="form-group">
-                <label for="nome">ID</label>
-                <input type="text" id="id" name="id" size="50" maxlength="50" minlength="3" class="form-control" value="0" readonly disabled required>
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" size="50" maxlength="50" minlength="3" class="form-control" value="0" readonly  required>
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>
@@ -42,15 +42,13 @@
 
             <div class="btn-group gap-2 my-2">
                 <button type="submit" class="btn btn-primary" title="Enviar ...">
-                      <i class="fa fa-save fa-fw"></i> Salvar</button>
+                <i class="fa fa-save fa-fw"></i> Salvar</button>
                       
-                      <button type="reset" onclick="" class="btn btn-success">
-                           <i class="fa fa-user-plus"></i> Novo</button>
+                <button type="reset" onclick="" class="btn btn-success">
+                <i class="fa fa-user-plus"></i> Novo</button>
                       
-                           <button type="button" onclick="obterContatos();" class="btn btn-info">
-                           <i class="fa fa-users"></i> Carregar contatos</button>
-
-
+                <button type="button" onclick="obterContatos();" class="btn btn-info">
+                <i class="fa fa-users"></i> Carregar contatos</button>
             </div>
 
         </form>
@@ -63,11 +61,11 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
+                <!-- <th>Nome</th> -->
                 <th>Email</th>
-                <th>Assunto</th>
-                <th>Assunto</th>
-                <th><i class="fa fa-cogs"></i></th>
+                <!-- <th>Assunto</th>
+                <th>Mensagem</th> -->
+                <th><i class="fa fa-cogs"></i> Opções</th>
             </tr>
             </thead>
             <tbody id="tb-contatos">
