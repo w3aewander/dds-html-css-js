@@ -33,33 +33,41 @@
                     <a class="nav-link active" aria-current="page" href="" data-target="inicio">  <i class="fas fa-home"></i> Inicio</a>
                     </li>
 
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="" data-target="login"  onclick="processarLogin();"><i class="fa fa-door-open fa-fw"></i> Entrar</a>
-                    </li>
-
-
-
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="" data-target="conteudo"><i class="fa fa-lightbulb"></i> Conteúdo</a>
                     </li>
 
 
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="" data-target="contato" onclick="processarEnvio();"><i class="fa fa-id-card fa-fw"></i> Contato</a>
-                    </li>
+                    </li> -->
                     
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="" data-target="sobre"><i class="fa fa-info-circle fa-fw"></i> Sobre</a>
-                    </li>
+                    </li> -->
 
                     <!-- Adicionando um novo item no menu -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="" data-target="vendas"><i class="fa fa-truck fa-fw"></i> Vendas</a>
-                    </li>
+                    </li> -->
+                    <!-- Adicionando um novo item no menu -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="" data-target="estoque"><i class="fa fa-tags fa-fw"></i> Estoque</a>
+                    </li> -->
                 </ul>
                 </div>
             </div>
+            
+            <div class="mr-auto">
+                <a class="btn btn-primary btn-sm" 
+                    aria-current="page" 
+                    href="" data-target="login"  
+                    onclick="processarLogin();">
+                    <i class="fa fa-door-open fa-fw"></i> Entrar
+                </a>
+            </div>
+            
         </nav>
 
     </header>
@@ -67,6 +75,7 @@
     <main class="container py-1 border">
         <div id="app">
             <!-- o conteudo será injetado dinâmicamente pelo JavaScript -->
+            <?php require "inicio.html"; ?>
         </div>
 
         <div id="faixa-deslizante"></div>

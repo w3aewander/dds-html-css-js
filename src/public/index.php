@@ -2,6 +2,12 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
+header('Access-Control-Allow-Origin: *'); 
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+
 // $parsed_url = parse_url($_SERVER['REQUEST_URI']);
 
 // //die(var_dump($parsed_url['path']) );

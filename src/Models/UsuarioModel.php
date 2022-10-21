@@ -12,7 +12,7 @@
  use \App\Persistence\Conexao as Conexao;
  use \App\Models\ICRUD;
 
- class UsuarioModel implements ICRUD  {
+ class UsuarioModel   {
 
     protected  $con;
     protected \App\Entities\Usuario $usuario;
@@ -57,9 +57,26 @@
      * @override
      * 
      */
-    public function add(string $table, Array $fields = []): Bool {
+    public function add(\App\Entities\Usuario $usuario): bool {
         
-        return false;
+        
+        // die( $usuario->getPerfil() );
+
+        $sql  =  " INSERT INTO usuarios(nome, email, perfil, senha) ";
+        $sql .= " VALUES ( ?, ?, ?, ? ) ";
+
+        $stm = $this->con->prepare($sql);
+
+        $senha = password_hash('123@Mudar', PASSWORD_BCRYPT); 
+
+        $stm->bindValue(1, $usuario->getNome());
+        $stm->bindValue(2, $usuario->getEmail());
+        $stm->bindValue(3, $usuario->getPerfil());
+        $stm->bindValue(4, $senha);
+
+        $affecteds = $stm->execute();
+
+        return $affecteds;
     }
 
     /**
@@ -67,8 +84,22 @@
      * @override
      * 
      */
-    public function update(string $table, Array $fields = []): bool{
-        return false;
+    public function update(\App\Entities\Usuario $usuario): bool{
+        
+        $sql =  " UPDATE usuarios ";
+        $sql .= " set nome= ?, email= ?, perfil=? ";
+        $sql .= " WHERE id = ? ";
+
+        $stm = $this->con->prepare($sql);
+
+        $stm->bindValue(1, $usuario->getNome());
+        $stm->bindValue(2, $usuario->getEmail());
+        $stm->bindValue(3, $usuario->getPerfil());
+        $stm->bindValue(4, $usuario->getId());
+        
+        $affecteds = $stm->execute();
+
+        return $affecteds;
     }
 
     /**

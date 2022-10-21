@@ -86,9 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 1000)
 
-    app.innerHTML = "Página dinamicamente carregada..."
+    // app.innerHTML = "Página dinamicamente carregada..."
 
+    carregarPagina('inicio.html')
+    
     animaFaixa()
+   
+    async () => desenharEscala()
+
 })
 
 const processarEnvio = () => {
@@ -253,3 +258,23 @@ const semaforo = async() => {
     document.getElementById('btn-semaforo').innerHTML = `Ligar Semáforo`
     divMsg.innerHTML = 'Pronto!'
 }
+
+const desenharEscala = () => {
+
+    setInterval( () => {
+        const escala = document.getElementsByClassName('box-escala')
+        escala.style.width = `${CrossMensure(1, 1,100,1,10)}cm` 
+        for(p = 1; p < 100; p++){
+            escala.style.backgroundColor = "red"
+            escala.style.width = `${CrossMensure(p, 1,100,1,10)}cm` 
+            sleep(1000)
+        }
+    }, 5000)
+} 
+
+const CrossMensure = (point, fromD1, fromD2, toD1, toD2) => {
+    console.log(point)
+   return (point - fromD1) * (toD2 - toD1) / (fromD2 - fromD1) + fromD1;
+}
+
+

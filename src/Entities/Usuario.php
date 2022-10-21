@@ -17,13 +17,11 @@
     private string $perfil;
     private string $senha;
 
-    
-
 
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -33,11 +31,9 @@
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
-
-        return $this;
     }
 
     
@@ -45,7 +41,7 @@
     /**
      * Get the value of nome
      */ 
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -55,11 +51,10 @@
      *
      * @return  self
      */ 
-    public function setNome($nome)
+    public function setNome(string $nome)
     {
         $this->nome = $nome;
 
-        return $this;
     }
 
     
@@ -67,7 +62,7 @@
     /**
      * Get the value of email
      */ 
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -77,19 +72,14 @@
      *
      * @return  self
      */ 
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
-
-        return $this;
     }
-
-    
-
     /**
      * Get the value of senha
      */ 
-    public function getSenha()
+    public function getSenha(): string
     {
         return $this->senha;
     }
@@ -99,11 +89,9 @@
      *
      * @return  self
      */ 
-    public function setSenha($senha)
+    public function setSenha(string $senha)
     {
         $this->senha = $senha;
-
-        return $this;
     }
 
     /**
@@ -122,7 +110,5 @@
     public function setPerfil($perfil)
     {
         $this->perfil = $perfil;
-
-        return $this;
     }
  }

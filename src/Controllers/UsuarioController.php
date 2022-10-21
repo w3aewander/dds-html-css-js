@@ -19,7 +19,26 @@
     }
     public function getAll(){
     
-        return $this->model->getAll("usuarios");
+        $usuarios = $this->model->getAll("usuarios");
+       
+
+        if ( $usuarios ){
+            return json_encode (['success'=> true, 
+               'data' => $usuarios, 
+               'message' => 'dados obtidos com sucesso.' ]);
+        }
+
+        return ( ['success'=> false, 
+                  'data' => $usuarios, 
+                  'message' => 'consulta não retornou dados' ]);
+    }
+
+    public function add(\App\Entities\Usuario $usuario): bool{
+
+        $affecteds = $this->model->add($usuario);
+
+        return $affecteds;
+
     }
 
  }

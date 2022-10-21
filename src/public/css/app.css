@@ -1,5 +1,5 @@
 body{
-    padding-top: 120px;
+    padding-top: 150px;
     font-size: .78rem;
     background: linear-gradient(to bottom,rgb(36, 51, 58), #466176, #bed4ea);
 }
@@ -7,6 +7,7 @@ main {
     /* height: 100vh; */
     min-height: 100vh;
     background-color: #fafafa;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .6);
 }
 
 .btnx {
@@ -37,4 +38,9 @@ nav a:hover {
 }
 .container {
     background-image: linear-gradient(rgb(212, 211, 211), rgb(235, 234, 234), #fafafa);
+}
+.box-escala{
+    width: 10cm; 
+    height: 50px; 
+    background-color: blanchedalmond;
 }
