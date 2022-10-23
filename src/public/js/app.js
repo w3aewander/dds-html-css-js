@@ -35,6 +35,19 @@ const animaFaixa = () => {
         100)
 }
 
+/**
+ * Processar o login de usuário
+ * @param {*} form 
+ * @returns 
+ */
+const processarLogin = () => {
+     setTimeout(() =>{
+         document.getElementById('form-login').addEventListener('submit', (evt)=>{
+             evt.preventDefault();
+             console.log('evento suprimido.')  
+            })
+    }, 2000)
+}
 //chamada de página com callback opcional...
 const carregarPagina = ( (pagina) => {
     divMsg.innerHTML = 'carregando página ...'
@@ -72,7 +85,8 @@ const showSpinner = (comando) => {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (e) => {
+
 
     setInterval(() => {
 
@@ -145,17 +159,10 @@ const processarEnvio = () => {
 }
 
 
-const processarLogin = () => {
+   async() => {
     divMsg.innerHTML = 'Processando login ...'
-    setTimeout(() => {
+    await setTimeout(() => {
  
-           document.getElementById('form-login').addEventListener('submit', (evt)=>{
-    
-            evt.preventDefault()
-
-            divMsg.innerHTML = 'carregando recursos..'
-            console.log(evt.target)
-
             const options =  { 
                  headers: {'Content-Type': 'application/x-www-form'}
             }
@@ -164,6 +171,9 @@ const processarLogin = () => {
             formData.append('email', evt.target.email.value)
             formData.append('senha', evt.target.senha.value)
     
+            alert('login aqui...')
+
+           
             fetch('/login.php', { method: "POST", body: JSON.stringify(formData), options})
             .then( resp => resp.json())
             .then( resp => { divMsg.innerHTML = "recursos carregados..."; console.log(resp)})
@@ -171,10 +181,7 @@ const processarLogin = () => {
              
         }, 1000)
 
-    } )
-
     //return false;
-
 }
 
 /**
