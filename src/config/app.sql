@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS telas (
 ) COMMENT 'gestão de telas do sistema';
 
 -- especificando a chave primaria
-ALTER TABLE IF NOT EXISTS telas 
+ALTER TABLE telas 
 ADD CONSTRAINT `fk_tela_modulos` 
 FOREIGN KEY(modulo_id) 
 REFERENCES modulos(id);
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS modulos_telas (
 ) COMMENT 'módulos';
 
 -- não especificando a chave primaria
-ALTER TABLE IF NOT EXISTS modulos_telas
+ALTER TABLE modulos_telas
 ADD FOREIGN KEY(modulo_id) REFERENCES modulos(id),
 ADD FOREIGN KEY(tela_id) REFERENCES telas(id);
 
