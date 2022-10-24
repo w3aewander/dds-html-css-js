@@ -96,3 +96,14 @@ ALTER TABLE perfis_modulos
 ADD constraint fk_perfis_modulos_perfil_idForeign Key (perfil_id) REFERENCES perfis (id),
 ADD constraint fk_perfis_modulos_modulo_id Foreign Key (modulo_id) REFERENCES modulos(id);
 
+
+INSERT INTO perfis (nome) values ('admin'), ('professor'), ('aluno');
+
+SELECT * FROM perfis;
+
+SELECT * FROM usuarios;
+UPDATE usuarios SET perfil_id = 1 WHERE id = 1;
+
+SELECT u.id, u.nome, p.nome FROM usuarios u
+INNER JOIN perfis p
+ON u.perfil_id = p.id; 
