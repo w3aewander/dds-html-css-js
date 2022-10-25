@@ -12,7 +12,7 @@ const btnBlue = document.getElementById('btn-blue')
 const btnBlack = document.getElementById('btn-black')
 const btnSemaforo = document.getElementById('btn-semaforo')
 
-const urlEnvioComando  = 'https://loja.wmomodavix.site/api/comando'
+const urlEnvioComando = 'https://loja.wmomodavix.site/api/comando'
 const urlEstadoComando = 'https://loja.wmomodavix.site/api/status'
 
 let contador = 0
@@ -21,8 +21,8 @@ ancora.forEach(a => {
     a.addEventListener('click', (evt) => {
         evt.preventDefault()
 
-        carregarPagina(`${evt.target.getAttribute('data-target')}.html`)       
-  
+        carregarPagina(`${evt.target.getAttribute('data-target')}.html`)
+
         scrollTo(0, 0)
     })
 })
@@ -41,15 +41,15 @@ const animaFaixa = () => {
  * @returns 
  */
 const processarLogin = () => {
-     setTimeout(() =>{
-         document.getElementById('form-login').addEventListener('submit', (evt)=>{
-             evt.preventDefault();
-             console.log('evento suprimido.')  
+        setTimeout(() => {
+            document.getElementById('form-login').addEventListener('submit', (evt) => {
+                evt.preventDefault();
+                console.log('evento suprimido.')
             })
-    }, 2000)
-}
-//chamada de página com callback opcional...
-const carregarPagina = ( (pagina) => {
+        }, 2000)
+    }
+    //chamada de página com callback opcional...
+const carregarPagina = ((pagina) => {
     divMsg.innerHTML = 'carregando página ...'
     fetch(pagina)
         .then(resp => resp.text())
@@ -66,7 +66,7 @@ const carregarPagina = ( (pagina) => {
  * @params string path do som
  * 
  */
-const tocarSom  = ( f ) => {
+const tocarSom = (f) => {
     const player = new Audio(f);
     player.play()
 }
@@ -75,12 +75,12 @@ const tocarSom  = ( f ) => {
 const showSpinner = (comando) => {
     //pega a referência do botão clicado
     let btnClicked = document.getElementById(`btn-${comando}`)
-        
+
     //pega o texto/html do botão no momento do click
     let btnClickedText = btnClicked.innerHTML
 
     //acrescenta o ícone spin para o botao
-    btnClicked.innerHTML = `<i class="fa fa-spinner"></i> processando ${comando}...`  
+    btnClicked.innerHTML = `<i class="fa fa-spinner"></i> processando ${comando}...`
 
 }
 
@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // app.innerHTML = "Página dinamicamente carregada..."
 
     carregarPagina('inicio.html')
-    
+
     animaFaixa()
-   
-    async () => desenharEscala()
+
+    async() => desenharEscala()
 
 })
 
@@ -115,71 +115,74 @@ const processarEnvio = () => {
     setTimeout(() => {
         document.getElementById('form-contato').addEventListener('submit', (e) => {
             e.preventDefault()
-            // alert('dados do formulário capturado.')
-           
+                // alert('dados do formulário capturado.')
+
             //console.log(this.id.value)
 
-             let constObjForm = new FormData()
+            let constObjForm = new FormData()
 
-             constObjForm.append("id", this.id.value)
-             constObjForm.append("nome",this.nome.value)
-             constObjForm.append("email",this.email.value)
-             constObjForm.append("assunto",this.assunto.value)
-             constObjForm.append("mensagem",this.mensagem.value)
-             
+            constObjForm.append("id", this.id.value)
+            constObjForm.append("nome", this.nome.value)
+            constObjForm.append("email", this.email.value)
+            constObjForm.append("assunto", this.assunto.value)
+            constObjForm.append("mensagem", this.mensagem.value)
+
             //  fetch('contato.php', {method:'POST', body:constObjForm})
             //  .then( resp => resp.json() )
             //  .then( resp => { 
             //     console.log(resp)
 
-                console.log(constObjForm)
+            console.log(constObjForm)
 
-                salvarContato(constObjForm)
+            salvarContato(constObjForm)
 
-                // document.getElementById('retorno').innerHTML = `
-                //    <h2>Dados Recebidos do Servidor</h2>
-                //    <strong>Nome:</strong>${resp.nome}<br>
-                //    <strong>E-mail:</strong>${resp.email}<br>
-                //    <strong>Assunto:</strong>${resp.assunto}<br>
-                //    <strong>Mensagem:</strong>${resp.mensagem}<br>
-                //`
+            // document.getElementById('retorno').innerHTML = `
+            //    <h2>Dados Recebidos do Servidor</h2>
+            //    <strong>Nome:</strong>${resp.nome}<br>
+            //    <strong>E-mail:</strong>${resp.email}<br>
+            //    <strong>Assunto:</strong>${resp.assunto}<br>
+            //    <strong>Mensagem:</strong>${resp.mensagem}<br>
+            //`
 
-                this.nome.value = ""
-                this.email.value = ""
-                this.assunto.value = ""
-                this.mensagem.value = ""
+            this.nome.value = ""
+            this.email.value = ""
+            this.assunto.value = ""
+            this.mensagem.value = ""
 
-                divMsg.innerHTML = 'Pronto!'
+            divMsg.innerHTML = 'Pronto!'
 
             //  })             
-             return false;
+            return false;
         })
     }, 1000)
-    
+
 }
 
 
-   async() => {
+async() => {
     divMsg.innerHTML = 'Processando login ...'
     await setTimeout(() => {
- 
-            const options =  { 
-                 headers: {'Content-Type': 'application/x-www-form'}
-            }
 
-            const formData = new FormData()
-            formData.append('email', evt.target.email.value)
-            formData.append('senha', evt.target.senha.value)
-    
-            alert('login aqui...')
+        const options = {
+            headers: { 'Content-Type': 'application/x-www-form' }
+        }
 
-           
-            fetch('/login.php', { method: "POST", body: JSON.stringify(formData), options})
-            .then( resp => resp.json())
-            .then( resp => { divMsg.innerHTML = "recursos carregados..."; console.log(resp)})
-            .catch( err => document.getElementById('retorno').innerHTML = err.message)
-             
-        }, 1000)
+        const formData = new FormData()
+        formData.append('email', evt.target.email.value)
+        formData.append('senha', evt.target.senha.value)
+
+        alert('login aqui...')
+
+
+        fetch('/login.php', { method: "POST", body: JSON.stringify(formData), options })
+            .then(resp => resp.json())
+            .then(resp => {
+                divMsg.innerHTML = "recursos carregados...";
+                console.log(resp)
+            })
+            .catch(err => document.getElementById('retorno').innerHTML = err.message)
+
+    }, 1000)
 
     //return false;
 }
@@ -188,48 +191,48 @@ const processarEnvio = () => {
  * Enivar comando para a API
  * @param {*} comando 
  */
-const enviarComando = async ( comando )  =>  {
-    divMsg.innerHTML = 'enviando comando ...'
+const enviarComando = async(comando) => {
+        divMsg.innerHTML = 'enviando comando ...'
 
-    let cmd = new FormData();
-    cmd.append("comando",comando)
+        let cmd = new FormData();
+        cmd.append("comando", comando)
 
-    //exibir spinner no botão clicado
-    showSpinner(comando)
+        //exibir spinner no botão clicado
+        showSpinner(comando)
 
-    await fetch(urlEnvioComando, { method: "POST", body: cmd  })   
-    .then( resp => resp.json())
-    .then(resp => { console.log(resp)})
-    .catch(err => console.log(err))
-    .finally( (r) => { 
-        setTimeout( () => {            
-            estadoComando()     
-            divMsg.innerHTML = 'Pronto!'
-            document.getElementById(`btn-${comando}`).innerHTML = `Ligar ${comando}` 
-        }, 1000)
-     })
+        await fetch(urlEnvioComando, { method: "POST", body: cmd })
+            .then(resp => resp.json())
+            .then(resp => { console.log(resp) })
+            .catch(err => console.log(err))
+            .finally((r) => {
+                setTimeout(() => {
+                    estadoComando()
+                    divMsg.innerHTML = 'Pronto!'
+                    document.getElementById(`btn-${comando}`).innerHTML = `Ligar ${comando}`
+                }, 1000)
+            })
 
-}
-/**
- * Obter o último comando emitido
- * @param void
- */
+    }
+    /**
+     * Obter o último comando emitido
+     * @param void
+     */
 const estadoComando = async() => {
     divMsg.innerHTML = 'obtendo status do comando..'
-    // for (var i=0; i <= 5; i++){
-    
-        await 
-            fetch(urlEstadoComando)
-            .then(resp => resp.json())
-            .then( resp => {
-                console.log(resp)
-                document.getElementsByClassName('circle')[0].style.backgroundColor = resp.comando
-                divMsg.innerHTML = `Cor recebida: ${resp.comando}`
-                if ( resp.comando === 'yellow'){
-                    tocarSom('sons/som2.wav')
-                }
-            })
-            .catch( err => console.log(err))       
+        // for (var i=0; i <= 5; i++){
+
+    await
+    fetch(urlEstadoComando)
+        .then(resp => resp.json())
+        .then(resp => {
+            console.log(resp)
+            document.getElementsByClassName('circle')[0].style.backgroundColor = resp.comando
+            divMsg.innerHTML = `Cor recebida: ${resp.comando}`
+            if (resp.comando === 'yellow') {
+                tocarSom('sons/som2.wav')
+            }
+        })
+        .catch(err => console.log(err))
 
     // }
 }
@@ -241,47 +244,62 @@ function sleep(milliseconds) {
 // Cria um semáforo
 const semaforo = async() => {
 
-  let comandos = [
-    'red', 
-    'yellow',
-    'green',
-    'blue',
-]
-  //exibir o spinner  
-  showSpinner('semaforo')
-   
-   for( c=0; c < comandos.length; c++ ) {    
+    let comandos = [
+            'red',
+            'yellow',
+            'green',
+            'blue',
+        ]
+        //exibir o spinner  
+    showSpinner('semaforo')
+
+    for (c = 0; c < comandos.length; c++) {
         await enviarComando('black')
         await sleep(100)
         await enviarComando(comandos[c])
         divMsg.innerHTML = `Contador: ${c +1} - Cor: ${comandos[c]}`
-        // if ( comandos[c] == "yellow" ) { 
-        //     tocarSom('sons/som2.wav') 
-        // }
-        //documentElement.getElementById(`btn-${comandos[c]}`).innerHTML = `Ligar ${comandos[c]}`
-        await sleep(5000) 
+            // if ( comandos[c] == "yellow" ) { 
+            //     tocarSom('sons/som2.wav') 
+            // }
+            //documentElement.getElementById(`btn-${comandos[c]}`).innerHTML = `Ligar ${comandos[c]}`
+        await sleep(5000)
     }
-    
+
     document.getElementById('btn-semaforo').innerHTML = `Ligar Semáforo`
     divMsg.innerHTML = 'Pronto!'
 }
 
 const desenharEscala = () => {
 
-    setInterval( () => {
+    setInterval(() => {
         const escala = document.getElementsByClassName('box-escala')
-        escala.style.width = `${CrossMensure(1, 1,100,1,10)}cm` 
-        for(p = 1; p < 100; p++){
+        escala.style.width = `${CrossMensure(1, 1,100,1,10)}cm`
+        for (p = 1; p < 100; p++) {
             escala.style.backgroundColor = "red"
-            escala.style.width = `${CrossMensure(p, 1,100,1,10)}cm` 
+            escala.style.width = `${CrossMensure(p, 1,100,1,10)}cm`
             sleep(1000)
         }
     }, 5000)
-} 
+}
 
 const CrossMensure = (point, fromD1, fromD2, toD1, toD2) => {
     console.log(point)
-   return (point - fromD1) * (toD2 - toD1) / (fromD2 - fromD1) + fromD1;
+    return (point - fromD1) * (toD2 - toD1) / (fromD2 - fromD1) + fromD1;
 }
 
+const alterarSenha = () => {
+    divMsg.innerHTML = "Solicitação de alteração de senha..."
 
+    fetch('alterar_senha.html', {
+        headers: {
+            'Content-type': 'text/html;charset = UTF-8'
+        }
+    }).then(r => {
+        r.text().then(r => {
+            app.innerHTML = r
+
+        })
+    })
+
+    return false
+}

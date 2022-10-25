@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form name="form-login" id="form-login"  method="POST">
+                <form name="form-login" id="form-login" method="POST">
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input class="form-control" type="email" name="email" id="email" value="" placeholder="ex.:email@dominio.com">
@@ -16,7 +16,10 @@
                         <label for="senha">Senha</label>
                         <input class="form-control" type="password" name="senha" id="senha" placeholder="sua senha...">
                     </div>
-                    <button type="submit" class="btn btn-primary my-2"><i class="fa fa-unlock"></i> Entrar</button>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><a href="" onclick="return alterarSenha();" target="_blank">Esqueci minha senha</a></span>
+                        <button type="submit" class="btn btn-primary my-2"><i class="fa fa-unlock"></i> Entrar</button>
+                    </div>
                 </form>
             </div>
 
