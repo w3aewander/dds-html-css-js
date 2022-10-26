@@ -303,3 +303,25 @@ const resetarSenha = () => {
 
     return false
 }
+
+const enviarUrlResetarSenha = (e) => {
+
+    divMsg.innerHTML = "Solicitação de reset de senha..."
+
+    const email = document.getElementById('email').value
+    
+    fetch('enviarUrlResetarSenha.php', {
+        method: 'POST',
+        body: `email=${email}`,
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+        }
+    }).then(r => {
+        r.text().then(r => {
+            console.log(r)
+            //app.innerHTML = r
+        })
+    })
+
+    return false
+}
