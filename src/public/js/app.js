@@ -287,10 +287,10 @@ const CrossMensure = (point, fromD1, fromD2, toD1, toD2) => {
     return (point - fromD1) * (toD2 - toD1) / (fromD2 - fromD1) + fromD1;
 }
 
-const alterarSenha = () => {
-    divMsg.innerHTML = "Solicitação de alteração de senha..."
+const resetarSenha = () => {
+    divMsg.innerHTML = "Solicitação de reset de senha..."
 
-    fetch('alterar_senha.html', {
+    fetch('resetar_senha.html', {
         headers: {
             'Content-type': 'text/html;charset = UTF-8'
         }
