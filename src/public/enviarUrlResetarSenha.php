@@ -7,6 +7,6 @@
 
  $request = $_REQUEST['email'];
  $base64 = base64_encode("alterarSenha.php?email=$request");
- $url = "https://www.qualqueremail.com:9000/$base64";
+ $url = "https://www.enderecodosite.com:9000/$base64";
  
  echo $url;

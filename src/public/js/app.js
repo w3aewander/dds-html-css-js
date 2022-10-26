@@ -309,7 +309,7 @@ const enviarUrlResetarSenha = (e) => {
     divMsg.innerHTML = "Solicitação de reset de senha..."
 
     const email = document.getElementById('email').value
-    
+
     fetch('enviarUrlResetarSenha.php', {
         method: 'POST',
         body: `email=${email}`,
@@ -319,7 +319,21 @@ const enviarUrlResetarSenha = (e) => {
     }).then(r => {
         r.text().then(r => {
             console.log(r)
-            //app.innerHTML = r
+            app.innerHTML = `
+             
+                   <div class="d-flex justify-content-center py-5">
+
+                      <div class="card card-body">
+                             <div class="card-text">
+                                 <h6> Um link foi enviado para seu email. Por favor,
+                                 acesse seu email para proceder o reset de sua senha.</h6>
+                             </div>
+                      </div>
+
+                   </div>
+
+            
+            `
         })
     })
 
