@@ -26,6 +26,6 @@
     ],
     "require": {
         "slim/slim": "^3.12",
-        "phpmailer/phpmailer": "^6.5"
+        "phpmailer/phpmailer": "^6.6"
     }
 }
