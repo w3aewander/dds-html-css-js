@@ -1,16 +1,4 @@
-<?php
-/**
- * Solicitação de reset de senha
- * @author Wanderlei Silva do Carmo <wander.silva@gmail.com>
- * @version 1.0
- */
-
- header('Content-Type: application/json; charset=UTF-8');
- 
- use PHPMailer\PHPMailer\PHPMailer;
- use PHPMailer\PHPMailer\SMTP;
- use PHPMailer\PHPMailer\Exception;
-
+<?php 
 
  require __DIR__ .'/../../vendor/autoload.php';
 
